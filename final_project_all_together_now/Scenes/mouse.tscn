@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://b83wjesqf68vj"]
 
+[ext_resource type="Script" uid="uid://c1uhqsj6vue6g" path="res://Scripts/mouse.gd" id="1_dev0r"]
+[ext_resource type="Texture2D" uid="uid://cpfhw2pxea38v" path="res://Art/Crosshair1.png" id="2_3ber4"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ivshb"]
 radius = 25.0
 
 [node name="Mouse" type="Area2D" unique_id=347734597]
+script = ExtResource("1_dev0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=427224373]
 shape = SubResource("CircleShape2D_ivshb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1642026241]
+texture = ExtResource("2_3ber4")
