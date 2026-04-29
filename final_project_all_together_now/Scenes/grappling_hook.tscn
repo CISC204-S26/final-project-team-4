@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://ce5nuuhdx3pa7"]
 
+[ext_resource type="Texture2D" uid="uid://dfjy0eb00jdlo" path="res://Art/grapple_hook.png" id="1_30ksf"]
+[ext_resource type="Script" uid="uid://c6jiuju35qxeb" path="res://Scenes/grappling_hook.gd" id="1_iay3k"]
+
 [node name="GrapplingHook" type="Node2D" unique_id=126776428]
+script = ExtResource("1_iay3k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1695196612]
+scale = Vector2(5, 5)
+texture = ExtResource("1_30ksf")
