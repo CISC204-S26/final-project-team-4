@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cyxqundcwhy21"]
+
+[ext_resource type="Script" uid="uid://fit0qntttwcw" path="res://player_keyboard.gd" id="1_80o1m"]
+[ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://icon.svg" id="1_jdi7g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80o1m"]
+size = Vector2(127, 128)
+
+[node name="playerKeyboard" type="CharacterBody2D" unique_id=1364868426]
+script = ExtResource("1_80o1m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=263756891]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_80o1m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=796655092]
+texture = ExtResource("1_jdi7g")

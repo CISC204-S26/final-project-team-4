@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://yg2pjxr0y1b0"]
 
-[ext_resource type="Texture2D" uid="uid://d32i1byadf5cq" path="res://Mountain background.png" id="1_6cvus"]
+[ext_resource type="Texture2D" uid="uid://d32i1byadf5cq" path="res://Art/Mountain background.png" id="1_6cvus"]
 
 [node name="Start-Floor" type="Node2D" unique_id=89315249]
 
