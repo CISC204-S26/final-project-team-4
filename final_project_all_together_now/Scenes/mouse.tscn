@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c1uhqsj6vue6g" path="res://Scripts/mouse.gd" id="1_dev0r"]
 [ext_resource type="Texture2D" uid="uid://cpfhw2pxea38v" path="res://Art/Crosshair1.png" id="2_3ber4"]
+[ext_resource type="Texture2D" uid="uid://bywtyghdw7c2b" path="res://Art/Crosshair2.png" id="3_kxv04"]
+[ext_resource type="Texture2D" uid="uid://cedv1x66ouiew" path="res://Art/Crosshair3.png" id="4_2q34x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ivshb"]
 radius = 25.0
@@ -12,5 +14,13 @@ script = ExtResource("1_dev0r")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=427224373]
 shape = SubResource("CircleShape2D_ivshb")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1642026241]
+[node name="Crosshair1" type="Sprite2D" parent="." unique_id=1642026241]
 texture = ExtResource("2_3ber4")
+
+[node name="Crosshair2" type="Sprite2D" parent="." unique_id=1956148834]
+visible = false
+texture = ExtResource("3_kxv04")
+
+[node name="Crosshair3" type="Sprite2D" parent="." unique_id=765865152]
+visible = false
+texture = ExtResource("4_2q34x")
