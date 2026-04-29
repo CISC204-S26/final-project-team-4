@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b83wjesqf68vj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ivshb"]
+radius = 25.0
+
+[node name="Mouse" type="Area2D" unique_id=347734597]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=427224373]
+shape = SubResource("CircleShape2D_ivshb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1642026241]
