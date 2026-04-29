@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b727rmyhnhtb0"]
+
+[ext_resource type="Texture2D" uid="uid://bapwcmnvjovxn" path="res://blackbg.png" id="1_aiegb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x60sr"]
+size = Vector2(1529, 203)
+
+[node name="test room" type="Node2D" unique_id=2111516780]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1410307922]
+position = Vector2(746, 1251)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1931243454]
+shape = SubResource("RectangleShape2D_x60sr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1949615867]
+position = Vector2(-3.9999542, -1.5258789e-05)
+scale = Vector2(1.3281251, 0.27777776)
+texture = ExtResource("1_aiegb")
