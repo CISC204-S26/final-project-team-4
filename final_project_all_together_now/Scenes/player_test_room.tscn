@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bu26keejud52e"]
 
-[ext_resource type="Texture2D" uid="uid://bapwcmnvjovxn" path="res://blackbg.png" id="1_w45fs"]
-[ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://player_keyboard.tscn" id="2_7x656"]
+[ext_resource type="Texture2D" uid="uid://bapwcmnvjovxn" path="res://Art/blackbg.png" id="1_w45fs"]
+[ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="2_7x656"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x656"]
 size = Vector2(20, 23.689545)
