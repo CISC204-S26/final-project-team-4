@@ -8,11 +8,17 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ivshb"]
 radius = 25.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q34x"]
+size = Vector2(50, 50)
+
 [node name="Mouse" type="Area2D" unique_id=347734597]
 script = ExtResource("1_dev0r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=427224373]
+[node name="Target" type="CollisionShape2D" parent="." unique_id=427224373]
 shape = SubResource("CircleShape2D_ivshb")
+
+[node name="Block" type="CollisionShape2D" parent="." unique_id=270727584]
+shape = SubResource("RectangleShape2D_2q34x")
 
 [node name="Crosshair1" type="Sprite2D" parent="." unique_id=1642026241]
 texture = ExtResource("2_3ber4")

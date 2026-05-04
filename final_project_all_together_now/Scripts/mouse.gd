@@ -16,6 +16,10 @@ func _process(delta: float) -> void:
 		swap_modes(1)
 	if Input.is_action_just_pressed("scroll_down"):
 		swap_modes(-1)
+	if Input.is_action_just_pressed("left_click"):
+		ability1()
+	if Input.is_action_just_pressed("right_click"):
+		ability2()
 
 
 func follow_mouse():
@@ -40,3 +44,21 @@ func swap_modes(mode):
 		$Crosshair1.hide()
 		$Crosshair2.hide()
 		$Crosshair3.show()
+
+
+func ability1():
+	if current_mode == 1:
+		pass
+	if current_mode == 2:
+		pass
+	if current_mode == 3:
+		pass
+
+
+func ability2():
+	if current_mode == 1:
+		pass
+	if current_mode == 2:
+		pass
+	if current_mode == 3:
+		pass
