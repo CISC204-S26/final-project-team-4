@@ -6,11 +6,23 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4mw4s"]
 radius = 25.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_oduel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xjght")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 5.0
+}]
+
 [node name="Bullet" type="Area2D" unique_id=298394698]
 script = ExtResource("1_oduel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=880878536]
 shape = SubResource("CircleShape2D_4mw4s")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1154076300]
-texture = ExtResource("1_xjght")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=985419023]
+sprite_frames = SubResource("SpriteFrames_oduel")
+animation = &"Normal"
