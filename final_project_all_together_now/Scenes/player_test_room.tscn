@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bapwcmnvjovxn" path="res://Art/blackbg.png" id="1_w45fs"]
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="2_7x656"]
+[ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/pixilart-drawing.png" id="2_ltrc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x656"]
 size = Vector2(20, 23.689545)
@@ -9,7 +10,12 @@ size = Vector2(20, 23.689545)
 [node name="playerTestRoom" type="Node2D" unique_id=1546480130]
 
 [node name="playerKeyboard" parent="." unique_id=1364868426 instance=ExtResource("2_7x656")]
-position = Vector2(584, 276)
+position = Vector2(584, 278)
+
+[node name="Sprite2D2" type="Sprite2D" parent="playerKeyboard" unique_id=1959785692]
+position = Vector2(-3.0000153, -1.0000305)
+scale = Vector2(4.25, 4.23)
+texture = ExtResource("2_ltrc1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1375987310]
 

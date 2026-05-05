@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dc5ov6d4t1mel"]
+
+[node name="TitleScreen" type="Node2D" unique_id=1942430554]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1034649463]
+offset_left = 491.0
+offset_top = 23.0
+offset_right = 954.0
+offset_bottom = 105.0
+theme_override_font_sizes/normal_font_size = 52
+text = "A Climber's Quest"
