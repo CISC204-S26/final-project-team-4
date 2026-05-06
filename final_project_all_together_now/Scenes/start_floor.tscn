@@ -5,6 +5,6 @@
 [node name="Start-Floor" type="Node2D" unique_id=89315249]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836593421]
-position = Vector2(10224.5, -13062.5)
-scale = Vector2(13.297525, 27.532227)
+position = Vector2(765.75, 469)
+scale = Vector2(0.98079437, 0.9208982)
 texture = ExtResource("1_6cvus")
