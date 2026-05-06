@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var nearby_interactables = []
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var cooldown = 0
@@ -31,4 +31,19 @@ func _physics_process(delta: float) -> void:
 				velocity.x = direction * SPEED * 40
 	if cooldown > 0:
 		cooldown -= 1
+	if Input.is_action_just_pressed("interact"):
+		if nearby_interactables:
+			nearby_interactables.back().interact()
 	move_and_slide()
+
+
+func _on_detector_area_entered(area: Area2D) -> void:
+	area.set_active = true
+	nearby_interactables.append(area)
+	print("in area")
+
+
+func _on_detector_area_exited(area: Area2D) -> void:
+	area.set_active = false
+	nearby_interactables.erase(area)
+	print("left area")

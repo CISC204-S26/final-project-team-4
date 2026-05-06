@@ -6,6 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80o1m"]
 size = Vector2(127, 128)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pa65i"]
+
 [node name="playerKeyboard" type="CharacterBody2D" unique_id=1364868426]
 script = ExtResource("1_80o1m")
 
@@ -17,3 +19,15 @@ shape = SubResource("RectangleShape2D_80o1m")
 position = Vector2(-1.0000002, 10.000001)
 scale = Vector2(2.6200001, 2.455)
 texture = ExtResource("2_pa65i")
+
+[node name="detector" type="Area2D" parent="." unique_id=1384452551]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detector" unique_id=986133918]
+scale = Vector2(8.455564, 10.502764)
+shape = SubResource("CircleShape2D_pa65i")
+
+[connection signal="area_entered" from="detector" to="." method="_on_detector_area_entered"]
+[connection signal="area_exited" from="detector" to="." method="_on_detector_area_exited"]
