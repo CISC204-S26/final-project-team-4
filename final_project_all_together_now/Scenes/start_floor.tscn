@@ -2,9 +2,40 @@
 
 [ext_resource type="Texture2D" uid="uid://d32i1byadf5cq" path="res://Art/Mountain background.png" id="1_6cvus"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cvus"]
+size = Vector2(1503.5, 129.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiqv1"]
+size = Vector2(106, 898)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7chr"]
+size = Vector2(1501, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2golk"]
+size = Vector2(117, 893.5)
+
 [node name="Start-Floor" type="Node2D" unique_id=89315249]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836593421]
-position = Vector2(765.75, 469)
-scale = Vector2(0.98079437, 0.9208982)
+position = Vector2(751.37506, 449)
+scale = Vector2(0.97737646, 0.8764647)
 texture = ExtResource("1_6cvus")
+
+[node name="Walls" type="Node2D" parent="." unique_id=2030816977]
+position = Vector2(0, -4)
+
+[node name="Walltop" type="CollisionShape2D" parent="Walls" unique_id=458502810]
+position = Vector2(752, -60.25)
+shape = SubResource("RectangleShape2D_6cvus")
+
+[node name="Wallleft" type="CollisionShape2D" parent="Walls" unique_id=2022072292]
+position = Vector2(-53, 449)
+shape = SubResource("RectangleShape2D_qiqv1")
+
+[node name="Wallbottom" type="CollisionShape2D" parent="Walls" unique_id=741793454]
+position = Vector2(751.5, 976)
+shape = SubResource("RectangleShape2D_r7chr")
+
+[node name="Wallright" type="CollisionShape2D" parent="Walls" unique_id=872278899]
+position = Vector2(1563, 452.25)
+shape = SubResource("RectangleShape2D_2golk")
