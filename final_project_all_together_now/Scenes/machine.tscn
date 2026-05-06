@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://l2ktc27opac6"]
+
+[ext_resource type="Script" uid="uid://c48cngi0pys6h" path="res://Scripts/machine.gd" id="1_h612m"]
+[ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://Art/icon.svg" id="1_xuuum"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h612m"]
+size = Vector2(118, 105)
+
+[node name="Machine" type="Area2D" unique_id=792676402]
+script = ExtResource("1_h612m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1020802857]
+position = Vector2(-1, 2.5)
+shape = SubResource("RectangleShape2D_h612m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=947565381]
+texture = ExtResource("1_xuuum")

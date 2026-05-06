@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://e2e7dtq8rsnv"]
+
+[ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://Art/icon.svg" id="1_d65uc"]
+[ext_resource type="Script" uid="uid://bjueqpu5q0cnf" path="res://Scripts/toggle_block.gd" id="1_ucetr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucetr"]
+
+[node name="ToggleBlock" type="Area2D" unique_id=1078913243]
+script = ExtResource("1_ucetr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237675122]
+shape = SubResource("RectangleShape2D_ucetr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1338283387]
+texture = ExtResource("1_d65uc")

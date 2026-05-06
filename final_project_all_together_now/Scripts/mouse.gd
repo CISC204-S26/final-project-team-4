@@ -3,6 +3,12 @@ extends Area2D
 var current_mode = 1
 var mode_2_unlock = false
 var mode_3_unlock = false
+var ability11_cooldown = 0
+var ability12_cooldown = 0
+var ability22_cooldown = 0
+var ability23_cooldown = 0
+
+var bullet = preload("res://Scenes/bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +26,8 @@ func _process(delta: float) -> void:
 		ability1()
 	if Input.is_action_just_pressed("right_click"):
 		ability2()
+	if ability11_cooldown > 0:
+		ability11_cooldown = ability11_cooldown - 1
 
 
 func follow_mouse():
@@ -48,7 +56,9 @@ func swap_modes(mode):
 
 func ability1():
 	if current_mode == 1:
-		pass
+		if ability11_cooldown < 1:
+			get_tree().root.add_child(bullet.instantiate())
+			ability11_cooldown = 25
 	if current_mode == 2:
 		pass
 	if current_mode == 3:
