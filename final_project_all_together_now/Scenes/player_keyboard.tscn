@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cyxqundcwhy21"]
 
-[ext_resource type="Script" uid="uid://fit0qntttwcw" path="res://player_keyboard.gd" id="1_80o1m"]
-[ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://icon.svg" id="1_jdi7g"]
+[ext_resource type="Script" uid="uid://fit0qntttwcw" path="res://Scripts/player_keyboard.gd" id="1_80o1m"]
+[ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/pixilart-drawing.png" id="2_pa65i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80o1m"]
 size = Vector2(127, 128)
@@ -13,5 +13,7 @@ script = ExtResource("1_80o1m")
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_80o1m")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=796655092]
-texture = ExtResource("1_jdi7g")
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=971155980]
+position = Vector2(-1.0000002, 10.000001)
+scale = Vector2(2.6200001, 2.455)
+texture = ExtResource("2_pa65i")
