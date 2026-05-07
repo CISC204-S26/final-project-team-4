@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://Art/icon.svg" id="1_xuuum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h612m"]
-size = Vector2(118, 105)
+size = Vector2(118, 124)
 
 [node name="Machine" type="Area2D" unique_id=792676402]
+collision_layer = 16
+collision_mask = 16
 script = ExtResource("1_h612m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1020802857]
-position = Vector2(-1, 2.5)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_h612m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=947565381]

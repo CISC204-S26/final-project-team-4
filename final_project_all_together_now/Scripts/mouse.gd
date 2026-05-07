@@ -10,6 +10,8 @@ var ability23_cooldown = 0
 
 var bullet = preload("res://Scenes/bullet.tscn")
 
+var interactables = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -67,8 +69,17 @@ func ability1():
 
 func ability2():
 	if current_mode == 1:
-		pass
+		if interactables:
+			interactables[-1].toggler()
 	if current_mode == 2:
 		pass
 	if current_mode == 3:
 		pass
+
+
+func _on_area_entered(area: Area2D) -> void:
+	interactables.append(area)
+
+
+func _on_area_exited(area: Area2D) -> void:
+	interactables.erase(area)

@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="1_lc1oi"]
 [ext_resource type="PackedScene" uid="uid://dvoeug3ul32lj" path="res://Scenes/test_enemy.tscn" id="2_8od7v"]
+[ext_resource type="PackedScene" uid="uid://l2ktc27opac6" path="res://Scenes/machine.tscn" id="3_ys1qc"]
+[ext_resource type="PackedScene" uid="uid://e2e7dtq8rsnv" path="res://Scenes/toggle_block.tscn" id="4_35xla"]
 
 [node name="Node2D" type="Node2D" unique_id=67599634]
 
@@ -10,3 +12,11 @@
 [node name="TestEnemy" parent="." unique_id=2086419235 instance=ExtResource("2_8od7v")]
 position = Vector2(385, 243)
 health = 100
+
+[node name="Machine" parent="." unique_id=792676402 instance=ExtResource("3_ys1qc")]
+position = Vector2(1053, 163)
+
+[node name="ToggleBlock" parent="." unique_id=1078913243 instance=ExtResource("4_35xla")]
+position = Vector2(996, 408)
+
+[connection signal="toggle" from="Machine" to="ToggleBlock" method="_on_machine_toggle"]

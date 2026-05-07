@@ -4,11 +4,13 @@
 [ext_resource type="Script" uid="uid://bjueqpu5q0cnf" path="res://Scripts/toggle_block.gd" id="1_ucetr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucetr"]
+size = Vector2(120, 121)
 
 [node name="ToggleBlock" type="Area2D" unique_id=1078913243]
 script = ExtResource("1_ucetr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237675122]
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_ucetr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1338283387]
