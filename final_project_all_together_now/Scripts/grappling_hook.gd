@@ -5,13 +5,19 @@ extends Node2D
 var is_grappling = false;
 var hook_point = Vector2.ZERO;
 
+var should_hook = false;
+
 @export var hook_speed = 400.0;
 @export var max_hook_distance = 800.0;
 
 func _physics_process(delta: float) -> void:
-	if (Input.is_action_just_pressed("left_click")):
-		shoot_hook();
-	elif (Input.is_action_just_pressed("right_click")):
+	if (Input.is_action_just_pressed("right_click")):
+		should_hook = !should_hook; #set should hook to true if false and false if true
+		
+	if (should_hook):
+		if (!is_grappling):
+			shoot_hook();
+	else:
 		player.end_grapple();
 		
 	if is_grappling:
