@@ -12,7 +12,8 @@ size = Vector2(20, 23.689545)
 [node name="playerKeyboard" parent="." unique_id=1364868426 instance=ExtResource("1_6jnww")]
 position = Vector2(584, 278)
 
-[node name="GrapplingHook" parent="playerKeyboard" unique_id=126776428 instance=ExtResource("2_pqqk8")]
+[node name="GrapplingHook" parent="playerKeyboard" unique_id=126776428 node_paths=PackedStringArray("player") instance=ExtResource("2_pqqk8")]
+player = NodePath("..")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1375987310]
 
@@ -23,5 +24,34 @@ shape = SubResource("RectangleShape2D_7x656")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1463107929]
 position = Vector2(540.49994, 733.8035)
+scale = Vector2(1.8029515, -0.32445407)
+texture = ExtResource("1_nfsgd")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=55685633]
+position = Vector2(645, -750)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1205638711]
+position = Vector2(535, 699.0772)
+scale = Vector2(103.98277, 9.715443)
+shape = SubResource("RectangleShape2D_7x656")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1055726009]
+position = Vector2(540.49994, 733.8035)
+scale = Vector2(1.8029515, -0.32445407)
+texture = ExtResource("1_nfsgd")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=174657128]
+position = Vector2(1431.0001, 533.00006)
+rotation = -0.7853982
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=211951721]
+position = Vector2(535, 699.0772)
+rotation = -0.7853982
+scale = Vector2(103.98277, 9.715443)
+shape = SubResource("RectangleShape2D_7x656")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=485699136]
+position = Vector2(540.49994, 733.8035)
+rotation = -0.7853982
 scale = Vector2(1.8029515, -0.32445407)
 texture = ExtResource("1_nfsgd")

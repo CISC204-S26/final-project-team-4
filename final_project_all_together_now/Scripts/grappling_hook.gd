@@ -1,28 +1,62 @@
 extends Node2D
 
-@onready var mouse = get_node("res://Scenes/mouse.tscn");
-var shoot_hook = false;
-var target = null;
+@export var player: Node2D; #set this to player which this scene should be a child of
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var is_grappling = false;
+var hook_point = Vector2.ZERO;
 
+@export var hook_speed = 400.0;
+@export var max_hook_distance = 800.0;
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if (Input.is_action_pressed("left_click")):
-		shoot_hook = true;
+func _physics_process(delta: float) -> void:
+	if (Input.is_action_just_pressed("left_click")):
+		shoot_hook();
+	elif (Input.is_action_just_pressed("right_click")):
+		player.end_grapple();
+		
+	if is_grappling:
+		if player.is_grappling == false:
+			is_grappling = false;
+			reparent(player, false);
+			position = Vector2.ZERO;
+		
+
+func shoot_hook() -> void:
+	if (player == null):
+		print("No player assigned to grappling hook!");
+		return;
 	
-	if (shoot_hook):
-		shoot_hook = false;
+	var space_state = get_world_2d().direct_space_state;
+	
+	var start = player.global_position;
+	var mouse_pos = get_global_mouse_position();
+	var offset = mouse_pos - start;
+	
+	if offset.length() < 1:
+		print("Offset length less than 1!");
+		return;
 		
-		var space_state = get_world_2d().direct_space_state;
-		var start = global_position;
-		var end = get_global_mouse_position();
+	var direction = offset.normalized();
+	var end = start + direction * max_hook_distance;
+	
+	var query = PhysicsRayQueryParameters2D.create(start, end);
+	query.collide_with_areas = true;
+	query.collide_with_bodies = true;
+	
+	if player is CollisionObject2D:
+		query.exclude = [player.get_rid()];
+	
+	var hit = space_state.intersect_ray(query);
+	
+	if hit:
+		hook_point = hit.position;
 		
-		var raycast = PhysicsRayQueryParameters2D.create(start, end);
+		var grapple_target = hook_point - direction * 50;
+		reparent(get_tree().current_scene,true); #detach from player and move to hook point
+		global_position = hook_point;
 		
-		var hook_target = space_state.intersect_ray(raycast);
+		player.start_grapple(grapple_target, hook_speed);
 		
-		global_position = hook_target;
+		is_grappling = true;
+	else:
+		print("Raycast hit nothing!");
