@@ -7,6 +7,7 @@
 size = Vector2(50, 50)
 
 [node name="PowerBlock" type="Area2D" unique_id=557281579]
+collision_mask = 17
 script = ExtResource("1_g42fj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1072505920]

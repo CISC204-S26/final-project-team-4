@@ -7,6 +7,7 @@ var ability11_cooldown = 0
 var ability12_cooldown = 0
 var ability22_cooldown = 0
 var ability23_cooldown = 0
+var mouse_usable = true
 
 var bullet = preload("res://Scenes/bullet.tscn")
 var block = preload("res://Scenes/power_block.tscn")
@@ -20,15 +21,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	follow_mouse()
-	if Input.is_action_just_pressed("scroll_up"):
-		swap_modes(1)
-	if Input.is_action_just_pressed("scroll_down"):
-		swap_modes(-1)
-	if Input.is_action_just_pressed("left_click"):
-		ability1()
-	if Input.is_action_just_pressed("right_click"):
-		ability2()
+	if mouse_usable == true:
+		follow_mouse()
+		if Input.is_action_just_pressed("scroll_up"):
+			swap_modes(1)
+		if Input.is_action_just_pressed("scroll_down"):
+			swap_modes(-1)
+		if Input.is_action_just_pressed("left_click"):
+			ability1()
+		if Input.is_action_just_pressed("right_click"):
+			ability2()
 	if ability11_cooldown > 0:
 		ability11_cooldown = ability11_cooldown - 1
 	if ability12_cooldown > 0:
@@ -66,12 +68,50 @@ func swap_modes(mode):
 func ability1():
 	if current_mode == 1:
 		if ability11_cooldown < 1:
-			get_tree().root.add_child(bullet.instantiate())
-			ability11_cooldown = 25
+			var shot = bullet.instantiate()
+			shot.direction = Vector2(0, 0)
+			shot.power = 25
+			get_tree().root.add_child(shot)
+			ability11_cooldown = 33
 	if current_mode == 2:
 		if ability12_cooldown < 1:
-			get_tree().root.add_child(bullet.instantiate())
-			ability12_cooldown = 75
+			var shot1 = bullet.instantiate()
+			shot1.direction = Vector2(-1, -1)
+			shot1.power = 10
+			get_tree().root.add_child(shot1)
+			var shot2 = bullet.instantiate()
+			shot2.direction = Vector2(0, -1)
+			shot2.power = 10
+			get_tree().root.add_child(shot2)
+			var shot3 = bullet.instantiate()
+			shot3.direction = Vector2(1, -1)
+			shot3.power = 10
+			get_tree().root.add_child(shot3)
+			var shot4 = bullet.instantiate()
+			shot4.direction = Vector2(-1, 0)
+			shot4.power = 10
+			get_tree().root.add_child(shot4)
+			var shot5 = bullet.instantiate()
+			shot5.direction = Vector2(-1, 1)
+			shot5.power = 10
+			get_tree().root.add_child(shot5)
+			var shot6 = bullet.instantiate()
+			shot6.direction = Vector2(0, 0)
+			shot6.power = 10
+			get_tree().root.add_child(shot6)
+			var shot7 = bullet.instantiate()
+			shot7.direction = Vector2(1, 1)
+			shot7.power = 10
+			get_tree().root.add_child(shot7)
+			var shot8 = bullet.instantiate()
+			shot8.direction = Vector2(0, 1)
+			shot8.power = 10
+			get_tree().root.add_child(shot8)
+			var shot9 = bullet.instantiate()
+			shot9.direction = Vector2(1, 0)
+			shot9.power = 10
+			get_tree().root.add_child(shot9)
+			ability12_cooldown = 100
 	if current_mode == 3:
 		pass
 
@@ -83,7 +123,7 @@ func ability2():
 	if current_mode == 2:
 		pass
 	if current_mode == 3:
-		pass
+		get_tree().root.add_child(block.instantiate())
 
 
 func _on_area_entered(area: Area2D) -> void:
