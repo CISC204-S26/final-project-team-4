@@ -6,11 +6,8 @@
 [node name="GrapplingHook" type="Node2D" unique_id=126776428]
 script = ExtResource("1_iay3k")
 
-[node name="Line2D" type="Line2D" parent="." unique_id=988016509]
-scale = Vector2(5, 5)
-width = 2.0
-default_color = Color(0, 0, 0, 1)
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1695196612]
 scale = Vector2(5, 5)
 texture = ExtResource("2_iay3k")
+
+[node name="Line2D" type="Line2D" parent="Sprite2D" unique_id=988016509]

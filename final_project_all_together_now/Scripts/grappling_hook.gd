@@ -2,6 +2,8 @@ extends Node2D
 
 @export var player: Node2D; #set this to player which this scene should be a child of
 
+@onready var cable = get_node("Line2D");
+
 var is_grappling = false;
 var hook_point = Vector2.ZERO;
 
@@ -13,7 +15,16 @@ var can_grapple = false;
 @export var max_hook_distance = 800.0;
 
 func _physics_process(delta: float) -> void:
+	#set cable between player and hook
+	cable.add_point(Vector2(100, 50));
+	cable.add_point(Vector2(100, 50));
+	
+	update_cable();
+	
 	can_grapple = player.can_grapple; #make sure this is the same as player's can_grapple var
+	if (!is_grappling):
+		look_at(get_global_mouse_position()); #point toward mouse if not currently grappling
+		
 	if (Input.is_action_just_pressed("right_click") && can_grapple):
 		should_hook = !should_hook; #set should hook to true if false and false if true
 		
@@ -75,3 +86,10 @@ func shoot_hook() -> void:
 		is_grappling = true;
 	else:
 		print("Raycast hit nothing!");
+
+func update_cable() -> void:
+	cable.visible = true;
+
+	cable.clear_points();
+	cable.add_point(cable.to_local(player.global_position));
+	cable.add_point(cable.to_local(global_position));
