@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Final Project All Together Now"
-run/main_scene="uid://bu26keejud52e"
+run/main_scene="uid://de6msty11xf3a"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://Art/icon.svg"
 

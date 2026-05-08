@@ -7,11 +7,14 @@ var hook_point = Vector2.ZERO;
 
 var should_hook = false;
 
+var can_grapple = false;
+
 @export var hook_speed = 400.0;
 @export var max_hook_distance = 800.0;
 
 func _physics_process(delta: float) -> void:
-	if (Input.is_action_just_pressed("right_click")):
+	can_grapple = player.can_grapple; #make sure this is the same as player's can_grapple var
+	if (Input.is_action_just_pressed("right_click") && can_grapple):
 		should_hook = !should_hook; #set should hook to true if false and false if true
 		
 	if (should_hook):
@@ -19,6 +22,10 @@ func _physics_process(delta: float) -> void:
 			shoot_hook();
 	else:
 		player.end_grapple();
+	
+	if (!can_grapple):
+		if (is_grappling):
+			player.end_grapple();
 		
 	if is_grappling:
 		if player.is_grappling == false:
@@ -50,7 +57,9 @@ func shoot_hook() -> void:
 	query.collide_with_bodies = true;
 	
 	if player is CollisionObject2D:
+		#exclude player and mouse from raycast query temporarily before we organize layers
 		query.exclude = [player.get_rid()];
+		query.exclude = [$"../../Mouse".get_rid()];
 	
 	var hit = space_state.intersect_ray(query);
 	
