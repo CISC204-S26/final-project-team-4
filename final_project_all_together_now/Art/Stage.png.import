@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1ltvq4wakfdx"
-path="res://.godot/imported/Helmet Colors - Final Project.png-aa88fcccb04ef3284439dada432ef8b4.ctex"
+uid="uid://dyuj8inmnb2v1"
+path="res://.godot/imported/Stage.png-52e8b5e739ffdda9baaf25c89405ad18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Helmet Colors - Final Project.png"
-dest_files=["res://.godot/imported/Helmet Colors - Final Project.png-aa88fcccb04ef3284439dada432ef8b4.ctex"]
+source_file="res://Art/Stage.png"
+dest_files=["res://.godot/imported/Stage.png-52e8b5e739ffdda9baaf25c89405ad18.ctex"]
 
 [params]
 

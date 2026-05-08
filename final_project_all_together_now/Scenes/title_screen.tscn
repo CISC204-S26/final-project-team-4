@@ -1,11 +1,90 @@
 [gd_scene format=3 uid="uid://dc5ov6d4t1mel"]
 
+[ext_resource type="Script" uid="uid://be1jvxuxlc8ti" path="res://Scripts/customizable.gd" id="1_4gxqj"]
+[ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/MCStandingSprite.png" id="1_klylv"]
+[ext_resource type="Texture2D" uid="uid://b8hadspkdpqiu" path="res://Art/AlternateHelmetColors.png" id="2_p3fck"]
+[ext_resource type="Texture2D" uid="uid://dbucr0lyodtjj" path="res://Art/blue-arrow-png-28.png" id="4_twnyg"]
+
 [node name="TitleScreen" type="Node2D" unique_id=1942430554]
+script = ExtResource("1_4gxqj")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1034649463]
-offset_left = 491.0
-offset_top = 23.0
-offset_right = 954.0
-offset_bottom = 105.0
-theme_override_font_sizes/normal_font_size = 52
+offset_left = 1051.0
+offset_top = 71.0
+offset_right = 2817.0
+offset_bottom = 379.0
+theme_override_font_sizes/normal_font_size = 200
 text = "A Climber's Quest"
+
+[node name="Player" type="Sprite2D" parent="." unique_id=2061518422]
+position = Vector2(285, 1762.9999)
+scale = Vector2(7.99375, 8.13375)
+texture = ExtResource("1_klylv")
+
+[node name="RedHelmet" type="Sprite2D" parent="." unique_id=204457321]
+position = Vector2(291.00003, 1548.0834)
+scale = Vector2(8.058824, 8.333334)
+texture = ExtResource("2_p3fck")
+region_enabled = true
+region_rect = Rect2(65.5, 75.25, 34.5, 24.75)
+
+[node name="OrangeHelmet" type="Sprite2D" parent="." unique_id=1873342860]
+position = Vector2(290.5, 1539.0416)
+scale = Vector2(8.029411, 8.403333)
+texture = ExtResource("2_p3fck")
+region_enabled = true
+region_rect = Rect2(65.5, 48.75, 34.5, 25.5)
+
+[node name="YellowHelmet" type="Sprite2D" parent="." unique_id=770319986]
+position = Vector2(286, 1541.0834)
+scale = Vector2(8.121212, 8.166664)
+texture = ExtResource("2_p3fck")
+region_enabled = true
+region_rect = Rect2(-0.5, 73.25, 33.5, 26.5)
+
+[node name="GreenHelmet" type="Sprite2D" parent="." unique_id=1040722306]
+position = Vector2(282, 1539.0834)
+scale = Vector2(8, 8.166664)
+texture = ExtResource("2_p3fck")
+region_enabled = true
+region_rect = Rect2(63.75, 24.25, 36, 24.5)
+
+[node name="BlueHelmet" type="Sprite2D" parent="." unique_id=1379074288]
+position = Vector2(286.5, 1541.0834)
+scale = Vector2(7.969697, 8.166664)
+texture = ExtResource("2_p3fck")
+region_enabled = true
+region_rect = Rect2(32.5, 73.75, 33.5, 26)
+
+[node name="PurpleHelmet" type="Sprite2D" parent="." unique_id=1698636541]
+position = Vector2(289.5, 1536.0835)
+scale = Vector2(8.029411, 8.166664)
+texture = ExtResource("2_p3fck")
+region_enabled = true
+region_rect = Rect2(65.5, -0.25, 34.5, 24.875)
+
+[node name="HelmetButton" type="Button" parent="." unique_id=1873335860]
+offset_left = 456.0
+offset_top = 606.0
+offset_right = 745.0
+offset_bottom = 715.0
+
+[node name="ForwardBlueArrow" type="Sprite2D" parent="HelmetButton" unique_id=393913547]
+position = Vector2(138, 53)
+rotation = 3.1415927
+scale = Vector2(0.396, 0.475)
+texture = ExtResource("4_twnyg")
+
+[node name="HelmetBack" type="Button" parent="." unique_id=114845922]
+offset_left = 745.0
+offset_top = 606.0
+offset_right = 1034.0
+offset_bottom = 715.0
+
+[node name="ForwardBlueArrow" type="Sprite2D" parent="HelmetBack" unique_id=97557458]
+position = Vector2(142, 56)
+scale = Vector2(0.396, 0.475)
+texture = ExtResource("4_twnyg")
+
+[connection signal="pressed" from="HelmetButton" to="." method="_on_helmet_button_pressed"]
+[connection signal="pressed" from="HelmetBack" to="." method="_on_helmet_back_pressed"]
