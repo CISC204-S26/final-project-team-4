@@ -21,7 +21,7 @@ position = Vector2(751.37506, 449)
 scale = Vector2(0.97737646, 0.8764647)
 texture = ExtResource("1_6cvus")
 
-[node name="Walls" type="Node2D" parent="." unique_id=2030816977]
+[node name="Walls" type="Area2D" parent="." unique_id=514320107]
 position = Vector2(0, -4)
 
 [node name="Walltop" type="CollisionShape2D" parent="Walls" unique_id=458502810]
