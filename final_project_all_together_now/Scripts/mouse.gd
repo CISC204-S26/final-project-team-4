@@ -9,6 +9,7 @@ var ability22_cooldown = 0
 var ability23_cooldown = 0
 
 var bullet = preload("res://Scenes/bullet.tscn")
+var block = preload("res://Scenes/power_block.tscn")
 
 var interactables = []
 
@@ -30,6 +31,12 @@ func _process(delta: float) -> void:
 		ability2()
 	if ability11_cooldown > 0:
 		ability11_cooldown = ability11_cooldown - 1
+	if ability12_cooldown > 0:
+		ability12_cooldown = ability12_cooldown - 1
+	if ability22_cooldown > 0:
+		ability22_cooldown = ability22_cooldown - 1
+	if ability23_cooldown > 0:
+		ability23_cooldown = ability23_cooldown - 1
 
 
 func follow_mouse():
@@ -62,7 +69,9 @@ func ability1():
 			get_tree().root.add_child(bullet.instantiate())
 			ability11_cooldown = 25
 	if current_mode == 2:
-		pass
+		if ability12_cooldown < 1:
+			get_tree().root.add_child(bullet.instantiate())
+			ability12_cooldown = 75
 	if current_mode == 3:
 		pass
 

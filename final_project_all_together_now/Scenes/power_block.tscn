@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dnsuvcm7v8kjj"]
+
+[ext_resource type="Script" uid="uid://cm01si4diapsl" path="res://Scripts/power_block.gd" id="1_g42fj"]
+[ext_resource type="Texture2D" uid="uid://bq4p2ec86l2uc" path="res://Art/PowerBlock.png" id="2_kcpov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rknv2"]
+size = Vector2(50, 50)
+
+[node name="PowerBlock" type="Area2D" unique_id=557281579]
+script = ExtResource("1_g42fj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1072505920]
+shape = SubResource("RectangleShape2D_rknv2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1185275428]
+texture = ExtResource("2_kcpov")
