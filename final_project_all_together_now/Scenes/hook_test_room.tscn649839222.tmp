@@ -57,5 +57,4 @@ rotation = -0.7853982
 scale = Vector2(1.8029515, -0.32445407)
 texture = ExtResource("1_nfsgd")
 
-[node name="Mouse" parent="." unique_id=347734597 node_paths=PackedStringArray("player") instance=ExtResource("4_j5cgp")]
-player = NodePath("../playerKeyboard")
+[node name="Mouse" parent="." unique_id=347734597 instance=ExtResource("4_j5cgp")]

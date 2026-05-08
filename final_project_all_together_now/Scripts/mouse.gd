@@ -9,6 +9,9 @@ var ability22_cooldown = 0
 var ability23_cooldown = 0
 var mouse_usable = true
 
+@export var player: Node2D;
+var can_grapple = false;
+
 var bullet = preload("res://Scenes/bullet.tscn")
 var block = preload("res://Scenes/power_block.tscn")
 
@@ -121,7 +124,9 @@ func ability2():
 		if interactables:
 			interactables[-1].toggler()
 	if current_mode == 2:
-		pass
+		player.can_grapple = true;
+	else:
+		player.can_grapple = false;
 	if current_mode == 3:
 		get_tree().root.add_child(block.instantiate())
 
