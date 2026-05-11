@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 		look_at(get_global_mouse_position()); #point toward mouse if not currently grappling
 		
 	if (Input.is_action_just_pressed("right_click") && can_grapple):
+		
 		should_hook = !should_hook; #set should hook to true if false and false if true
 		
 	if (should_hook):

@@ -15,12 +15,16 @@ var can_grapple = false;
 func _physics_process(delta: float) -> void:
 	#grappling code
 	if (is_grappling && can_grapple):
+		GlobalVariable.grapple = true
+
 		var direction_to_target = global_position.direction_to(grapple_target);
 		velocity = direction_to_target * grapple_speed;
 		
 		move_and_slide();
 		return;
-	
+	else:
+		GlobalVariable.grapple = false
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
