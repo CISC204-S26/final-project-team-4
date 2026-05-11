@@ -2,89 +2,170 @@
 
 [ext_resource type="Script" uid="uid://be1jvxuxlc8ti" path="res://Scripts/customizable.gd" id="1_4gxqj"]
 [ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/MCStandingSprite.png" id="1_klylv"]
+[ext_resource type="Texture2D" uid="uid://jg7h61q5twoi" path="res://Art/TitleScreenInterior.png" id="2_55kwv"]
 [ext_resource type="Texture2D" uid="uid://b8hadspkdpqiu" path="res://Art/AlternateHelmetColors.png" id="2_p3fck"]
+[ext_resource type="Texture2D" uid="uid://bgsbcmgw6g6bp" path="res://Art/Grass.png" id="3_6vd4x"]
+[ext_resource type="Texture2D" uid="uid://dhm7x2uroe6dk" path="res://Art/Cave.png" id="4_n82rj"]
 [ext_resource type="Texture2D" uid="uid://dbucr0lyodtjj" path="res://Art/blue-arrow-png-28.png" id="4_twnyg"]
+[ext_resource type="Texture2D" uid="uid://mkxhjesh5274" path="res://Art/Sparkles.png" id="5_8mikk"]
+[ext_resource type="Texture2D" uid="uid://eug52b5gldkg" path="res://Art/Map.png" id="9_sqelc"]
+[ext_resource type="Texture2D" uid="uid://dfjy0eb00jdlo" path="res://Art/grapple_hook.png" id="10_w5sh6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vd4x"]
+bg_color = Color(1, 0.1254902, 0.19607843, 0.654902)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.36468747, 0, 0.016292645, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="TitleScreen" type="Node2D" unique_id=1942430554]
 script = ExtResource("1_4gxqj")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1034649463]
-offset_left = 1051.0
-offset_top = 71.0
-offset_right = 2817.0
-offset_bottom = 379.0
-theme_override_font_sizes/normal_font_size = 200
+[node name="LogCabin" type="Sprite2D" parent="." unique_id=1297847908]
+position = Vector2(750.24, 450.4875)
+scale = Vector2(1.3769696, 1.197123)
+texture = ExtResource("2_55kwv")
+region_enabled = true
+region_rect = Rect2(0, 0, 1089.0771, 756.36365)
+
+[node name="HelmetContainer" type="PanelContainer" parent="." unique_id=1742027356]
+offset_left = 279.0
+offset_top = 229.0
+offset_right = 521.0
+offset_bottom = 404.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6vd4x")
+
+[node name="MarginContainer" type="MarginContainer" parent="HelmetContainer" unique_id=1247999826]
+layout_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1372747507]
+offset_left = 56.0
+offset_top = 21.0
+offset_right = 1430.0
+offset_bottom = 238.0
+theme_override_font_sizes/normal_font_size = 158
 text = "A Climber's Quest"
 
+[node name="Grass" type="Sprite2D" parent="." unique_id=1471162929]
+position = Vector2(1247.3452, 563.9142)
+scale = Vector2(1.9719138, 1.6457095)
+texture = ExtResource("3_6vd4x")
+region_enabled = true
+region_rect = Rect2(98.894104, 208.32024, 167.92407, 40.043427)
+
+[node name="Cave" type="Sprite2D" parent="." unique_id=81000290]
+position = Vector2(1245.0001, 489)
+scale = Vector2(1.6923311, 1.4414186)
+texture = ExtResource("4_n82rj")
+region_rect = Rect2(0, 0, 1089.0771, 756.36365)
+
+[node name="Sparkles" type="Sprite2D" parent="." unique_id=403046005]
+position = Vector2(1251.5515, 527)
+scale = Vector2(0.20407945, 0.20370384)
+texture = ExtResource("5_8mikk")
+region_enabled = true
+region_rect = Rect2(226.85245, 37.668518, 465.23117, 324.6892)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1034649463]
+offset_left = 292.0
+offset_top = 235.0
+offset_right = 519.0
+offset_bottom = 409.0
+theme_override_font_sizes/normal_font_size = 60
+text = "Helmet
+  Color"
+
 [node name="Player" type="Sprite2D" parent="." unique_id=2061518422]
-position = Vector2(285, 1762.9999)
-scale = Vector2(7.99375, 8.13375)
+position = Vector2(425.5, 784.5)
+scale = Vector2(4.6299996, 4.6100006)
 texture = ExtResource("1_klylv")
 
 [node name="RedHelmet" type="Sprite2D" parent="." unique_id=204457321]
-position = Vector2(291.00003, 1548.0834)
-scale = Vector2(8.058824, 8.333334)
+position = Vector2(429.25, 664.24994)
+scale = Vector2(4.661765, 4.562498)
 texture = ExtResource("2_p3fck")
 region_enabled = true
 region_rect = Rect2(65.5, 75.25, 34.5, 24.75)
 
 [node name="OrangeHelmet" type="Sprite2D" parent="." unique_id=1873342860]
-position = Vector2(290.5, 1539.0416)
-scale = Vector2(8.029411, 8.403333)
+position = Vector2(429.5, 658.50006)
+scale = Vector2(4.6470575, 4.5600085)
 texture = ExtResource("2_p3fck")
 region_enabled = true
 region_rect = Rect2(65.5, 48.75, 34.5, 25.5)
 
 [node name="YellowHelmet" type="Sprite2D" parent="." unique_id=770319986]
-position = Vector2(286, 1541.0834)
-scale = Vector2(8.121212, 8.166664)
+position = Vector2(426.99997, 658.5)
+scale = Vector2(4.636364, 4.6153855)
 texture = ExtResource("2_p3fck")
 region_enabled = true
 region_rect = Rect2(-0.5, 73.25, 33.5, 26.5)
 
 [node name="GreenHelmet" type="Sprite2D" parent="." unique_id=1040722306]
-position = Vector2(282, 1539.0834)
-scale = Vector2(8, 8.166664)
+position = Vector2(424.49997, 657.5)
+scale = Vector2(4.6111107, 4.6666636)
 texture = ExtResource("2_p3fck")
 region_enabled = true
-region_rect = Rect2(63.75, 24.25, 36, 24.5)
+region_rect = Rect2(63.75, 24.75, 36, 24)
 
 [node name="BlueHelmet" type="Sprite2D" parent="." unique_id=1379074288]
-position = Vector2(286.5, 1541.0834)
-scale = Vector2(7.969697, 8.166664)
+position = Vector2(426.5, 657.00006)
+scale = Vector2(4.60606, 4.730769)
 texture = ExtResource("2_p3fck")
 region_enabled = true
 region_rect = Rect2(32.5, 73.75, 33.5, 26)
 
 [node name="PurpleHelmet" type="Sprite2D" parent="." unique_id=1698636541]
-position = Vector2(289.5, 1536.0835)
-scale = Vector2(8.029411, 8.166664)
+position = Vector2(429.49997, 654.5)
+scale = Vector2(4.647059, 4.749999)
 texture = ExtResource("2_p3fck")
 region_enabled = true
 region_rect = Rect2(65.5, -0.25, 34.5, 24.875)
 
 [node name="HelmetButton" type="Button" parent="." unique_id=1873335860]
-offset_left = 456.0
-offset_top = 606.0
-offset_right = 745.0
-offset_bottom = 715.0
+offset_left = 58.0
+offset_top = 262.0
+offset_right = 269.0
+offset_bottom = 371.0
 
 [node name="ForwardBlueArrow" type="Sprite2D" parent="HelmetButton" unique_id=393913547]
-position = Vector2(138, 53)
+position = Vector2(102, 53)
 rotation = 3.1415927
 scale = Vector2(0.396, 0.475)
 texture = ExtResource("4_twnyg")
 
 [node name="HelmetBack" type="Button" parent="." unique_id=114845922]
-offset_left = 745.0
-offset_top = 606.0
-offset_right = 1034.0
-offset_bottom = 715.0
+offset_left = 533.0
+offset_top = 267.0
+offset_right = 743.0
+offset_bottom = 376.0
 
 [node name="ForwardBlueArrow" type="Sprite2D" parent="HelmetBack" unique_id=97557458]
-position = Vector2(142, 56)
+position = Vector2(109, 57)
 scale = Vector2(0.396, 0.475)
 texture = ExtResource("4_twnyg")
+
+[node name="ButtonHolder" type="PanelContainer" parent="." unique_id=303214027]
+offset_left = 895.0
+offset_top = 669.0
+offset_right = 1493.0
+offset_bottom = 858.0
+
+[node name="Map" type="Sprite2D" parent="." unique_id=2059268804]
+position = Vector2(539.24994, 741)
+scale = Vector2(0.33100003, 0.28)
+texture = ExtResource("9_sqelc")
+
+[node name="Grappling Hook" type="Sprite2D" parent="." unique_id=1202172420]
+position = Vector2(310.99994, 815)
+rotation = -2.7925267
+scale = Vector2(5.8097296, 3.410907)
+texture = ExtResource("10_w5sh6")
 
 [connection signal="pressed" from="HelmetButton" to="." method="_on_helmet_button_pressed"]
 [connection signal="pressed" from="HelmetBack" to="." method="_on_helmet_back_pressed"]
