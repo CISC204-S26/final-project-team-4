@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://d32i1byadf5cq" path="res://Art/Mountain background.png" id="1_6cvus"]
 [ext_resource type="Texture2D" uid="uid://crotvvcmtyty6" path="res://Art/Cloud image.png" id="2_qiqv1"]
+[ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="3_tjeu2"]
+[ext_resource type="PackedScene" uid="uid://ce5nuuhdx3pa7" path="res://Scenes/grappling_hook.tscn" id="4_4chlb"]
+[ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="5_5kskf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cvus"]
 size = Vector2(1503.5, 129.5)
@@ -72,3 +75,12 @@ texture = ExtResource("2_qiqv1")
 position = Vector2(245, 295)
 scale = Vector2(0.25, 0.13964844)
 texture = ExtResource("2_qiqv1")
+
+[node name="playerKeyboard" parent="." unique_id=1364868426 instance=ExtResource("3_tjeu2")]
+position = Vector2(100.000015, 735)
+scale = Vector2(0.42648658, 0.37039793)
+
+[node name="GrapplingHook" parent="playerKeyboard" unique_id=126776428 node_paths=PackedStringArray("player") instance=ExtResource("4_4chlb")]
+player = NodePath("..")
+
+[node name="Mouse" parent="." unique_id=347734597 instance=ExtResource("5_5kskf")]
