@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bkxihocn0ku03"]
+
+[ext_resource type="Texture2D" uid="uid://ciphk8m1teicj" path="res://Art/Stone Wall.png" id="1_ra4wm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drm01"]
+size = Vector2(97, 543)
+
+[node name="StoneWall" type="Area2D" unique_id=421973786]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2098931965]
+position = Vector2(42.25001, 253.75)
+scale = Vector2(0.25537112, 0.37011716)
+texture = ExtResource("1_ra4wm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=852022893]
+position = Vector2(38.5, 261.5)
+shape = SubResource("RectangleShape2D_drm01")
