@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="2_7x656"]
 [ext_resource type="PackedScene" uid="uid://ce5nuuhdx3pa7" path="res://Scenes/grappling_hook.tscn" id="2_8skvb"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="3_ltrc1"]
+[ext_resource type="PackedScene" uid="uid://dvoeug3ul32lj" path="res://Scenes/test_enemy.tscn" id="4_7iy1w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x656"]
 size = Vector2(20, 23.689545)
@@ -27,5 +28,8 @@ shape = SubResource("RectangleShape2D_7x656")
 position = Vector2(540.49994, 733.8035)
 scale = Vector2(1.8029515, -0.32445407)
 texture = ExtResource("1_w45fs")
+
+[node name="TestEnemy" parent="." unique_id=216584471 instance=ExtResource("4_7iy1w")]
+position = Vector2(1235, 382)
 
 [node name="Mouse" parent="." unique_id=347734597 instance=ExtResource("3_ltrc1")]

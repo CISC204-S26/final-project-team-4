@@ -32,8 +32,8 @@ func _process(delta: float) -> void:
 			swap_modes(-1)
 		if Input.is_action_just_pressed("left_click"):
 			ability1()
-		if Input.is_action_just_pressed("right_click"):
-			ability2()
+	if Input.is_action_just_pressed("right_click"):
+		ability2()
 	if ability11_cooldown > 0:
 		ability11_cooldown = ability11_cooldown - 1
 	if ability12_cooldown > 0:
@@ -42,6 +42,8 @@ func _process(delta: float) -> void:
 		ability22_cooldown = ability22_cooldown - 1
 	if ability23_cooldown > 0:
 		ability23_cooldown = ability23_cooldown - 1
+		if ability23_cooldown == 0:
+			mouse_usable = true
 
 
 func follow_mouse():
@@ -128,7 +130,12 @@ func ability2():
 	else:
 		player.can_grapple = false;
 	if current_mode == 3:
-		get_tree().root.add_child(block.instantiate())
+		if mouse_usable == true:
+			get_tree().root.add_child(block.instantiate())
+			mouse_usable = false
+			ability23_cooldown = 250
+		else:
+			mouse_usable = true
 
 
 func _on_area_entered(area: Area2D) -> void:
