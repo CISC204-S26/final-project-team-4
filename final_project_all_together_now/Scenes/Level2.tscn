@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://l83j2wdfh6ms"]
+
+[ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="1_0plju"]
+[ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/MCStandingSprite.png" id="2_ms0wi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5awjf"]
+size = Vector2(127, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3cqh"]
+radius = 10.342252
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jriq2"]
+size = Vector2(1558, 151)
+
+[sub_resource type="ImageTexture" id="ImageTexture_0plju"]
+
+[node name="Level2" type="Node2D" unique_id=337573815]
+position = Vector2(14, -216)
+
+[node name="playerKeyboard" parent="." unique_id=1364868426 instance=ExtResource("1_0plju")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="playerKeyboard" unique_id=149624542]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_5awjf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="playerKeyboard" unique_id=826593033]
+position = Vector2(-1.0000002, 10.000001)
+scale = Vector2(2.6200001, 2.455)
+texture = ExtResource("2_ms0wi")
+
+[node name="detector2" type="Area2D" parent="playerKeyboard" unique_id=1310261807]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerKeyboard/detector2" unique_id=29991470]
+position = Vector2(3.999999, 0)
+scale = Vector2(8.455564, 10.502764)
+shape = SubResource("CircleShape2D_n3cqh")
+
+[node name="Ground_1" type="StaticBody2D" parent="." unique_id=2007041995]
+position = Vector2(4, 284)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_1" unique_id=1302411450]
+position = Vector2(2, 10)
+shape = SubResource("RectangleShape2D_jriq2")
+
+[node name="ColorRect" type="ColorRect" parent="Ground_1" unique_id=467064593]
+offset_left = -784.0
+offset_top = -50.0
+offset_right = 768.0
+offset_bottom = 96.0
+color = Color(0.40289104, 0.40289104, 0.40289104, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Ground_2" type="StaticBody2D" parent="." unique_id=991706515]
+position = Vector2(2062, 188)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_2" unique_id=489420679]
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_jriq2")
+
+[node name="ColorRect" type="ColorRect" parent="Ground_2" unique_id=1866681705]
+offset_left = -772.0
+offset_top = -66.0
+offset_right = 780.0
+offset_bottom = 80.0
+color = Color(0.40289104, 0.40289104, 0.40289104, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Ground_3" type="StaticBody2D" parent="." unique_id=114403223]
+position = Vector2(950, -390)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_3" unique_id=1090274053]
+position = Vector2(-10, 2)
+shape = SubResource("RectangleShape2D_jriq2")
+
+[node name="ColorRect" type="ColorRect" parent="Ground_3" unique_id=488980208]
+offset_left = -780.0
+offset_top = -72.0
+offset_right = 772.0
+offset_bottom = 74.0
+color = Color(0.40289104, 0.40289104, 0.40289104, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=8399783]
+position = Vector2(753, -218)
+scale = Vector2(0.97737646, 2.1804197)
+texture = SubResource("ImageTexture_0plju")
