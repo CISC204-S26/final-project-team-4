@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://l83j2wdfh6ms"]
 
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="1_0plju"]
+[ext_resource type="Texture2D" uid="uid://dv1i5nh404ctl" path="res://Art/cave _background.jpeg" id="1_ms0wi"]
 [ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/MCStandingSprite.png" id="2_ms0wi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5awjf"]
@@ -12,10 +13,18 @@ radius = 10.342252
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jriq2"]
 size = Vector2(1558, 151)
 
-[sub_resource type="ImageTexture" id="ImageTexture_0plju"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0plju"]
+size = Vector2(554.3554, 138.01814)
 
 [node name="Level2" type="Node2D" unique_id=337573815]
 position = Vector2(14, -216)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=8399783]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1742, -1466)
+scale = Vector2(8.154298, 8.280273)
+texture = ExtResource("1_ms0wi")
 
 [node name="playerKeyboard" parent="." unique_id=1364868426 instance=ExtResource("1_0plju")]
 
@@ -46,10 +55,10 @@ position = Vector2(2, 10)
 shape = SubResource("RectangleShape2D_jriq2")
 
 [node name="ColorRect" type="ColorRect" parent="Ground_1" unique_id=467064593]
-offset_left = -784.0
-offset_top = -50.0
-offset_right = 768.0
-offset_bottom = 96.0
+offset_left = -790.0
+offset_top = -92.0
+offset_right = 762.0
+offset_bottom = 54.0
 color = Color(0.40289104, 0.40289104, 0.40289104, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -69,13 +78,31 @@ color = Color(0.40289104, 0.40289104, 0.40289104, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Ground_3" type="StaticBody2D" parent="." unique_id=114403223]
-position = Vector2(950, -390)
+position = Vector2(811, -384)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_3" unique_id=1090274053]
 position = Vector2(-10, 2)
 shape = SubResource("RectangleShape2D_jriq2")
 
 [node name="ColorRect" type="ColorRect" parent="Ground_3" unique_id=488980208]
+offset_left = -788.0
+offset_top = -74.0
+offset_right = 764.0
+offset_bottom = 72.0
+color = Color(0.40289104, 0.40289104, 0.40289104, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Door_placeholder" type="StaticBody2D" parent="." unique_id=1539097463]
+position = Vector2(4793, -998)
+
+[node name="Ground_4" type="StaticBody2D" parent="." unique_id=2142860953]
+position = Vector2(4086, -182)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_4" unique_id=1692842637]
+position = Vector2(-10, 2)
+shape = SubResource("RectangleShape2D_jriq2")
+
+[node name="ColorRect" type="ColorRect" parent="Ground_4" unique_id=740849709]
 offset_left = -780.0
 offset_top = -72.0
 offset_right = 772.0
@@ -83,7 +110,34 @@ offset_bottom = 74.0
 color = Color(0.40289104, 0.40289104, 0.40289104, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=8399783]
-position = Vector2(753, -218)
-scale = Vector2(0.97737646, 2.1804197)
-texture = SubResource("ImageTexture_0plju")
+[node name="Death_zone_1" type="Area2D" parent="." unique_id=1806924827]
+position = Vector2(3152, -254)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death_zone_1" unique_id=259606980]
+position = Vector2(0, 361)
+rotation = -0.26529005
+shape = SubResource("RectangleShape2D_0plju")
+
+[node name="ColorRect" type="ColorRect" parent="Death_zone_1" unique_id=639306463]
+offset_left = -306.99997
+offset_top = 385.0
+offset_right = 265.48886
+offset_bottom = 536.7284
+rotation = -0.28972465
+color = Color(1, 0.100000024, 0.100000024, 1)
+
+[node name="Death_zone_2" type="Area2D" parent="." unique_id=813300760]
+position = Vector2(1102, 63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death_zone_2" unique_id=1447651072]
+position = Vector2(0, 376)
+rotation = -0.26529005
+shape = SubResource("RectangleShape2D_0plju")
+
+[node name="ColorRect" type="ColorRect" parent="Death_zone_2" unique_id=2014286558]
+offset_left = -306.99997
+offset_top = 385.0
+offset_right = 265.48886
+offset_bottom = 536.7284
+rotation = -0.28972465
+color = Color(1, 0.100000024, 0.100000024, 1)
