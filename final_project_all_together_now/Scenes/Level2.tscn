@@ -15,20 +15,23 @@ radius = 10.342252
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jriq2"]
 size = Vector2(1558, 151)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejprb"]
+size = Vector2(497, 360)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0plju"]
 size = Vector2(554.3554, 138.01814)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3cqh"]
-size = Vector2(8902, 215.75)
+size = Vector2(8902, 851.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehjmi"]
-size = Vector2(247, 8408)
+size = Vector2(1094.5, 8408)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4u3k"]
-size = Vector2(8629, 271)
+size = Vector2(8629, 910)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70df5"]
-size = Vector2(287.5, 8382)
+size = Vector2(1299, 8382)
 
 [node name="Level2" type="Node2D" unique_id=337573815]
 position = Vector2(14, -216)
@@ -36,8 +39,8 @@ position = Vector2(14, -216)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=8399783]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(1742, -1466)
-scale = Vector2(8.154298, 8.280273)
+position = Vector2(1793, -998.00006)
+scale = Vector2(7.110352, 6.844238)
 texture = ExtResource("1_ms0wi")
 
 [node name="playerKeyboard" parent="." unique_id=1364868426 instance=ExtResource("1_0plju")]
@@ -61,6 +64,8 @@ position = Vector2(3.999999, 0)
 scale = Vector2(8.455564, 10.502764)
 shape = SubResource("CircleShape2D_n3cqh")
 
+[node name="Camera2D" type="Camera2D" parent="playerKeyboard" unique_id=175429053]
+
 [node name="Ground_1" type="StaticBody2D" parent="." unique_id=2007041995]
 position = Vector2(4, 284)
 
@@ -69,8 +74,8 @@ position = Vector2(2, 10)
 shape = SubResource("RectangleShape2D_jriq2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_1" unique_id=558524924]
-position = Vector2(-13.9999485, 8.000015)
-scale = Vector2(1.6510638, 0.5714286)
+position = Vector2(-13.9999485, 13.000007)
+scale = Vector2(1.6510638, 0.5428572)
 texture = ExtResource("4_n3cqh")
 
 [node name="Ground_2" type="StaticBody2D" parent="." unique_id=991706515]
@@ -81,8 +86,8 @@ position = Vector2(-4, 4)
 shape = SubResource("RectangleShape2D_jriq2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_2" unique_id=589481996]
-position = Vector2(-13.9999485, 8.000015)
-scale = Vector2(1.6510638, 0.5714286)
+position = Vector2(-13.9999485, 26.500008)
+scale = Vector2(1.6510638, 0.46571437)
 texture = ExtResource("4_n3cqh")
 
 [node name="Grapple_wall" type="StaticBody2D" parent="." unique_id=114403223]
@@ -99,7 +104,13 @@ scale = Vector2(0.6039568, 1.0794235)
 texture = ExtResource("5_jriq2")
 
 [node name="Door_placeholder" type="StaticBody2D" parent="." unique_id=1539097463]
-position = Vector2(4793, -998)
+position = Vector2(3686, -2600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_placeholder" unique_id=1628550305]
+position = Vector2(-258.5, 22)
+shape = SubResource("RectangleShape2D_ejprb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door_placeholder" unique_id=1857461665]
 
 [node name="Ground_4" type="StaticBody2D" parent="." unique_id=2142860953]
 position = Vector2(4086, -182)
@@ -154,9 +165,9 @@ rotation = 0.2635447
 shape = SubResource("RectangleShape2D_jriq2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_5" unique_id=1319117323]
-position = Vector2(-132.99995, -361)
+position = Vector2(-135.69768, -351.07074)
 rotation = 0.26529005
-scale = Vector2(1.6510638, 0.5714286)
+scale = Vector2(1.6510638, 0.51263314)
 texture = ExtResource("4_n3cqh")
 
 [node name="Ground_6" type="StaticBody2D" parent="." unique_id=148461569]
@@ -167,9 +178,9 @@ position = Vector2(-10, -985)
 shape = SubResource("RectangleShape2D_jriq2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_6" unique_id=1702252313]
-position = Vector2(-9.9999485, -1003)
+position = Vector2(-10.944004, -992.42206)
 rotation = 0.08901179
-scale = Vector2(1.6510638, 0.5714286)
+scale = Vector2(1.6510638, 0.510743)
 texture = ExtResource("4_n3cqh")
 
 [node name="Ground_7" type="StaticBody2D" parent="." unique_id=120387008]
@@ -182,9 +193,9 @@ rotation = 0.2635447
 shape = SubResource("RectangleShape2D_jriq2")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground_7" unique_id=1144833162]
-position = Vector2(-132.99995, -361)
+position = Vector2(-137.69302, -343.72662)
 rotation = 0.26529005
-scale = Vector2(1.6510638, 0.5714286)
+scale = Vector2(1.6510638, 0.46914542)
 texture = ExtResource("4_n3cqh")
 
 [node name="Grapple_wall2" type="StaticBody2D" parent="." unique_id=316725063]
@@ -201,21 +212,36 @@ rotation = -1.5934856
 scale = Vector2(0.6039568, 1.0794235)
 texture = ExtResource("5_jriq2")
 
-[node name="Walls" type="Area2D" parent="." unique_id=1703049694]
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1121945479]
 position = Vector2(-1315, -631)
 
 [node name="Walltop" type="CollisionShape2D" parent="Walls" unique_id=1896434115]
-position = Vector2(3218, -5030.875)
+position = Vector2(3108, -3552.9375)
 shape = SubResource("RectangleShape2D_n3cqh")
 
 [node name="Wallleft" type="CollisionShape2D" parent="Walls" unique_id=1191519673]
-position = Vector2(-1135.5, -810)
+position = Vector2(-109.25, -849)
 shape = SubResource("RectangleShape2D_ehjmi")
 
 [node name="Wallbottom" type="CollisionShape2D" parent="Walls" unique_id=1231701430]
-position = Vector2(3107.5, 3466.5)
+position = Vector2(3108, 1722)
 shape = SubResource("RectangleShape2D_p4u3k")
 
 [node name="Wallright" type="CollisionShape2D" parent="Walls" unique_id=84777958]
-position = Vector2(7317.25, -849)
+position = Vector2(6811.5, -849)
 shape = SubResource("RectangleShape2D_70df5")
+
+[node name="Ground_8" type="StaticBody2D" parent="." unique_id=2118513812]
+position = Vector2(3133, -2010)
+rotation = -0.26529005
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground_8" unique_id=2014069884]
+position = Vector2(-167, -370)
+rotation = 0.2635447
+shape = SubResource("RectangleShape2D_jriq2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground_8" unique_id=1924262550]
+position = Vector2(-137.69302, -343.72662)
+rotation = 0.26529005
+scale = Vector2(1.6510638, 0.46914542)
+texture = ExtResource("4_n3cqh")
