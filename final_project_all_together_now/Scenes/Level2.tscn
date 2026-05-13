@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="1_0plju"]
 [ext_resource type="Texture2D" uid="uid://dv1i5nh404ctl" path="res://Art/cave _background.jpeg" id="1_ms0wi"]
 [ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/MCStandingSprite.png" id="2_ms0wi"]
+[ext_resource type="Texture2D" uid="uid://b74ycvt0jvvao" path="res://Art/platform_2.jpeg" id="4_n3cqh"]
+[ext_resource type="Texture2D" uid="uid://ciphk8m1teicj" path="res://Art/Stone Wall.png" id="5_jriq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5awjf"]
 size = Vector2(127, 128)
@@ -62,6 +64,11 @@ offset_bottom = 54.0
 color = Color(0.40289104, 0.40289104, 0.40289104, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="Ground_1" unique_id=558524924]
+position = Vector2(-13.9999485, 8.000015)
+scale = Vector2(1.6510638, 0.5714286)
+texture = ExtResource("4_n3cqh")
+
 [node name="Ground_2" type="StaticBody2D" parent="." unique_id=991706515]
 position = Vector2(2062, 188)
 
@@ -77,6 +84,11 @@ offset_bottom = 80.0
 color = Color(0.40289104, 0.40289104, 0.40289104, 1)
 metadata/_edit_use_anchors_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="Ground_2" unique_id=589481996]
+position = Vector2(-13.9999485, 8.000015)
+scale = Vector2(1.6510638, 0.5714286)
+texture = ExtResource("4_n3cqh")
+
 [node name="Ground_3" type="StaticBody2D" parent="." unique_id=114403223]
 position = Vector2(811, -384)
 
@@ -91,6 +103,12 @@ offset_right = 764.0
 offset_bottom = 72.0
 color = Color(0.40289104, 0.40289104, 0.40289104, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground_3" unique_id=1421960349]
+position = Vector2(-6.462017, 1.1254514)
+rotation = -1.5934856
+scale = Vector2(0.6039568, 1.0794235)
+texture = ExtResource("5_jriq2")
 
 [node name="Door_placeholder" type="StaticBody2D" parent="." unique_id=1539097463]
 position = Vector2(4793, -998)
@@ -109,6 +127,11 @@ offset_right = 772.0
 offset_bottom = 74.0
 color = Color(0.40289104, 0.40289104, 0.40289104, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground_4" unique_id=907344977]
+position = Vector2(-13.9999485, 8.000015)
+scale = Vector2(1.6510638, 0.5714286)
+texture = ExtResource("4_n3cqh")
 
 [node name="Death_zone_1" type="Area2D" parent="." unique_id=1806924827]
 position = Vector2(3152, -254)
