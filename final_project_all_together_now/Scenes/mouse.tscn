@@ -27,5 +27,7 @@ texture = ExtResource("3_kxv04")
 visible = false
 texture = ExtResource("4_2q34x")
 
+[node name="Line2D" type="Line2D" parent="." unique_id=1051959339]
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

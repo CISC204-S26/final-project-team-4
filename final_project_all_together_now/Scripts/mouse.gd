@@ -10,6 +10,9 @@ var mouse_usable = true
 @export var player: Node2D;
 var can_grapple = false;
 
+@onready var laser = get_node("Line2D");
+var can_shoot_laser = false;
+
 var bullet = preload("res://Scenes/bullet.tscn")
 var block = preload("res://Scenes/power_block.tscn")
 
@@ -22,6 +25,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Input.is_action_pressed("left_click") && can_shoot_laser:
+		update_laser();
+	else:
+		laser.visible = false;
+			
 	if mouse_usable == true:
 		follow_mouse()
 		if Input.is_action_just_pressed("scroll_up"):
@@ -120,8 +128,9 @@ func ability1():
 			get_tree().root.add_child(shot9)
 			ability12_cooldown = 100
 	if current_mode == 3:
-		pass
-
+		can_shoot_laser = true;
+	else:
+		can_shoot_laser = false;
 
 func ability2():
 	if current_mode == 1:
@@ -139,6 +148,25 @@ func ability2():
 		else:
 			mouse_usable = true
 
+func update_laser() -> void:
+	var space_state = get_world_2d().direct_space_state;
+	var start = player.global_position;
+	var mouse_pos = get_global_mouse_position();
+	var offset = mouse_pos - start;
+	var direction = offset.normalized();
+	var end = start + direction;
+	var query = PhysicsRayQueryParameters2D.create(start, end);
+	query.collide_with_areas = true;
+	query.collide_with_bodies = true;
+	query.exclude = [player.get_rid()];
+	#query.exclude = [$"../../Mouse".get_rid()];
+	var hit = space_state.intersect_ray(query);
+	
+	laser.visible = true;
+
+	laser.clear_points();
+	laser.add_point(laser.to_local(player.global_position));
+	laser.add_point(laser.to_local(global_position));
 
 func _on_area_entered(area: Area2D) -> void:
 	interactables.append(area)
