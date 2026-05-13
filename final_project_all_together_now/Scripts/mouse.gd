@@ -54,9 +54,9 @@ func swap_modes(mode):
 		current_mode = 1
 	if current_mode < 1:
 		current_mode = 3
-	if $global_varibles.mode_2_unlock == false:
+	if GlobalVariable.mode_2_unlock == false:
 		pass
-	if $global_varibles.mode_3_unlock == false:
+	if GlobalVariable.mode_3_unlock == false:
 		pass
 	if current_mode == 1:
 		$Crosshair1.show()
