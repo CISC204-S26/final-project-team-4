@@ -1,8 +1,6 @@
 extends Area2D
 
 var current_mode = 1
-var mode_2_unlock = false
-var mode_3_unlock = false
 var ability11_cooldown = 0
 var ability12_cooldown = 0
 var ability22_cooldown = 0
@@ -56,6 +54,10 @@ func swap_modes(mode):
 		current_mode = 1
 	if current_mode < 1:
 		current_mode = 3
+	if $global_varibles.mode_2_unlock == false:
+		pass
+	if $global_varibles.mode_3_unlock == false:
+		pass
 	if current_mode == 1:
 		$Crosshair1.show()
 		$Crosshair2.hide()
