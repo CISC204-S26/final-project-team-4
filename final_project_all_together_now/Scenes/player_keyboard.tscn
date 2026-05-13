@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fit0qntttwcw" path="res://Scripts/player_keyboard.gd" id="1_80o1m"]
 [ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/MCStandingSprite.png" id="2_pa65i"]
+[ext_resource type="Texture2D" uid="uid://b8hadspkdpqiu" path="res://Art/AlternateHelmetColors.png" id="3_ph8cx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80o1m"]
 size = Vector2(127, 128)
@@ -19,6 +20,48 @@ shape = SubResource("RectangleShape2D_80o1m")
 position = Vector2(-1.0000002, 10.000001)
 scale = Vector2(2.6200001, 2.455)
 texture = ExtResource("2_pa65i")
+
+[node name="RedHelmet" type="Sprite2D" parent="." unique_id=1566232800]
+position = Vector2(1.4999994, -53.499996)
+scale = Vector2(2.676471, 2.4583333)
+texture = ExtResource("3_ph8cx")
+region_enabled = true
+region_rect = Rect2(65.5, 75.25, 34.5, 24.75)
+
+[node name="OrangeHelmet" type="Sprite2D" parent="." unique_id=1281265612]
+position = Vector2(1.4999989, -56)
+scale = Vector2(2.6764705, 2.4799998)
+texture = ExtResource("3_ph8cx")
+region_enabled = true
+region_rect = Rect2(65.5, 48.75, 34.5, 25.5)
+
+[node name="YellowHelmet" type="Sprite2D" parent="." unique_id=1075566508]
+position = Vector2(2.3841858e-06, -56.499996)
+scale = Vector2(2.6666667, 2.5769231)
+texture = ExtResource("3_ph8cx")
+region_enabled = true
+region_rect = Rect2(-0.5, 73.25, 33.5, 26.5)
+
+[node name="GreenHelmet" type="Sprite2D" parent="." unique_id=2075655497]
+position = Vector2(-1.499997, -56)
+scale = Vector2(2.6388888, 2.4999998)
+texture = ExtResource("3_ph8cx")
+region_enabled = true
+region_rect = Rect2(63.75, 24.75, 36, 24)
+
+[node name="BlueHelmet" type="Sprite2D" parent="." unique_id=1863972624]
+position = Vector2(-5.9604645e-07, -55.5)
+scale = Vector2(2.666667, 2.4999998)
+texture = ExtResource("3_ph8cx")
+region_enabled = true
+region_rect = Rect2(32.5, 73.75, 33.5, 26)
+
+[node name="PurpleHelmet" type="Sprite2D" parent="." unique_id=1227527629]
+position = Vector2(1.0000067, -57.000008)
+scale = Vector2(2.647059, 2.4166665)
+texture = ExtResource("3_ph8cx")
+region_enabled = true
+region_rect = Rect2(65.5, -0.25, 34.5, 24.875)
 
 [node name="detector" type="Area2D" parent="." unique_id=1384452551]
 collision_layer = 0

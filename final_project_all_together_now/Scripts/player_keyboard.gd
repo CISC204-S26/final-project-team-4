@@ -74,3 +74,33 @@ func start_grapple(target_pos: Vector2, speed: float) -> void:
 
 func end_grapple() -> void:
 	is_grappling = false;
+
+#Customization
+#------------------------------
+
+@onready var helmets = [
+	$RedHelmet,
+	$OrangeHelmet,
+	$YellowHelmet,
+	$GreenHelmet,
+	$BlueHelmet,
+	$PurpleHelmet
+]
+
+func _ready():
+	apply_customization()
+
+func apply_customization():
+	for h in helmets:
+		if h: 
+			h.visible = false
+
+	var selected_helmet_index: int = 0
+	var index = GlobalVariable.selected_helmet_index
+	
+	if index >= 0 and index < helmets.size():
+		var chosen_helmet = helmets[index]
+		if chosen_helmet:
+			chosen_helmet.visible = true
+	else:
+		helmets[0].visible = true

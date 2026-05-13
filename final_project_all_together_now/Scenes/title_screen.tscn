@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://be1jvxuxlc8ti" path="res://Scripts/customizable.gd" id="1_4gxqj"]
 [ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/MCStandingSprite.png" id="1_klylv"]
+[ext_resource type="Script" uid="uid://de1mj8gyvt2hj" path="res://gamestart.gd" id="1_sqelc"]
 [ext_resource type="Texture2D" uid="uid://jg7h61q5twoi" path="res://Art/TitleScreenInterior.png" id="2_55kwv"]
 [ext_resource type="Texture2D" uid="uid://b8hadspkdpqiu" path="res://Art/AlternateHelmetColors.png" id="2_p3fck"]
 [ext_resource type="Texture2D" uid="uid://bgsbcmgw6g6bp" path="res://Art/Grass.png" id="3_6vd4x"]
@@ -18,6 +19,30 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.36468747, 0, 0.016292645, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mikk"]
+bg_color = Color(0.29803923, 0.8392157, 0, 0.6627451)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.08736742, 0.35497335, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sqelc"]
+bg_color = Color(0, 0.6784314, 0.73333335, 0.6039216)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.52156866, 0.8, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
@@ -150,11 +175,22 @@ position = Vector2(109, 57)
 scale = Vector2(0.396, 0.475)
 texture = ExtResource("4_twnyg")
 
-[node name="ButtonHolder" type="PanelContainer" parent="." unique_id=303214027]
+[node name="StartButtonHolder" type="PanelContainer" parent="." unique_id=303214027]
 offset_left = 895.0
 offset_top = 669.0
-offset_right = 1493.0
+offset_right = 1121.0
 offset_bottom = 858.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8mikk")
+
+[node name="StartButton" type="Button" parent="." unique_id=1942439020]
+offset_left = 910.0
+offset_top = 684.0
+offset_right = 1105.0
+offset_bottom = 844.0
+theme_override_font_sizes/font_size = 73
+text = "Start"
+script = ExtResource("1_sqelc")
+scene_to_load = "uid://yg2pjxr0y1b0"
 
 [node name="Map" type="Sprite2D" parent="." unique_id=2059268804]
 position = Vector2(539.24994, 741)
@@ -166,6 +202,26 @@ position = Vector2(310.99994, 815)
 rotation = -2.7925267
 scale = Vector2(5.8097296, 3.410907)
 texture = ExtResource("10_w5sh6")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1031918895]
+offset_left = 1128.0
+offset_top = 670.0
+offset_right = 1352.0
+offset_bottom = 857.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sqelc")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=582777955]
+layout_mode = 2
+
+[node name="LevelButton" type="Button" parent="." unique_id=1271804670]
+offset_left = 1143.0
+offset_top = 684.0
+offset_right = 1337.0
+offset_bottom = 843.0
+theme_override_font_sizes/font_size = 55
+text = "Level
+Select
+"
 
 [connection signal="pressed" from="HelmetButton" to="." method="_on_helmet_button_pressed"]
 [connection signal="pressed" from="HelmetBack" to="." method="_on_helmet_back_pressed"]
