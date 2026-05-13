@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bapwcmnvjovxn" path="res://Art/blackbg.png" id="1_nfsgd"]
 [ext_resource type="PackedScene" uid="uid://ce5nuuhdx3pa7" path="res://Scenes/grappling_hook.tscn" id="2_pqqk8"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="4_j5cgp"]
-[ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="5_32ldy"]
-[ext_resource type="Script" uid="uid://bh0gey13u8npt" path="res://Scenes/enemy_grappler_v2.gd" id="6_32ldy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x656"]
 size = Vector2(20, 23.689545)
@@ -61,7 +59,3 @@ texture = ExtResource("1_nfsgd")
 
 [node name="Mouse" parent="." unique_id=347734597 node_paths=PackedStringArray("player") instance=ExtResource("4_j5cgp")]
 player = NodePath("../playerKeyboard")
-
-[node name="enemy_grappler" parent="." unique_id=862453220 instance=ExtResource("5_32ldy")]
-position = Vector2(189, 239)
-script = ExtResource("6_32ldy")
