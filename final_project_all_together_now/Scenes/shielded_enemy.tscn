@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cknsghiynrcd"]
+
+[ext_resource type="Script" uid="uid://dmum6f2oh1cm4" path="res://Scripts/shielded_enemy.gd" id="1_05nic"]
+[ext_resource type="Texture2D" uid="uid://buxex4p6ueeii" path="res://Art/Blast.png" id="2_g64ve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g64ve"]
+size = Vector2(50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edia6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g64ve")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_05nic"]
+radius = 200.0
+
+[node name="ShieldedEnemy" type="Area2D" unique_id=1822803060]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_05nic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=403703198]
+shape = SubResource("RectangleShape2D_g64ve")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=808929057]
+sprite_frames = SubResource("SpriteFrames_edia6")
+
+[node name="Detector" type="Area2D" parent="." unique_id=1249222830]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=57269634]
+shape = SubResource("CircleShape2D_05nic")
+
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]
