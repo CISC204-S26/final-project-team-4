@@ -104,3 +104,8 @@ func apply_customization():
 			chosen_helmet.visible = true
 	else:
 		helmets[0].visible = true
+
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	position = Vector2(0,0)

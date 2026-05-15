@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d3sb8nu7oaa57" path="res://Scenes/cloud_floor.tscn" id="5_4chlb"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="5_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkxihocn0ku03" path="res://Scenes/stone_wall.tscn" id="6_5kskf"]
+[ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="7_5kskf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cvus"]
 size = Vector2(1503.5, 129.5)
@@ -18,6 +19,9 @@ size = Vector2(1501, 148)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2golk"]
 size = Vector2(117, 2236)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htqsl"]
+size = Vector2(33, 30)
 
 [node name="Start-Floor" type="Node2D" unique_id=89315249]
 
@@ -82,3 +86,12 @@ scale = Vector2(2, 1.15)
 [node name="CloudFloor5" parent="." unique_id=1498302425 instance=ExtResource("5_4chlb")]
 position = Vector2(10, -1346)
 scale = Vector2(5, 1)
+
+[node name="enemy_grappler" parent="." unique_id=862453220 instance=ExtResource("7_5kskf")]
+position = Vector2(538, 108)
+
+[node name="Area2D" type="Area2D" parent="enemy_grappler" unique_id=1120921600]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_grappler/Area2D" unique_id=1803575967]
+shape = SubResource("RectangleShape2D_htqsl")

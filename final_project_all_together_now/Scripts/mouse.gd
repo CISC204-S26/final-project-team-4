@@ -88,6 +88,7 @@ func ability1():
 			shot.power = 25
 			get_tree().root.add_child(shot)
 			ability11_cooldown = 33
+			
 	if current_mode == 2:
 		if ability12_cooldown < 1:
 			var shot1 = bullet.instantiate()

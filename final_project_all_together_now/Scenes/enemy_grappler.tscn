@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://bkwvqsx3jclkt"]
 
+[ext_resource type="Script" uid="uid://bh0gey13u8npt" path="res://Scripts/enemy_grappler_v2.gd" id="1_7j03j"]
+[ext_resource type="Texture2D" uid="uid://n5rfpf17owca" path="res://Art/grapple_hook_right.png" id="1_n1c7f"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmdac"]
 
 [node name="enemy_grappler" type="CharacterBody2D" unique_id=862453220]
+script = ExtResource("1_7j03j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319839360]
 shape = SubResource("RectangleShape2D_dmdac")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1854119169]
+texture = ExtResource("1_n1c7f")

@@ -4,14 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://bapwcmnvjovxn" path="res://Art/blackbg.png" id="1_nfsgd"]
 [ext_resource type="PackedScene" uid="uid://ce5nuuhdx3pa7" path="res://Scenes/grappling_hook.tscn" id="2_pqqk8"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="4_j5cgp"]
+[ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="5_pvra7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x656"]
 size = Vector2(20, 23.689545)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvra7"]
+size = Vector2(33, 30)
+
 [node name="playerTestRoom" type="Node2D" unique_id=1546480130]
 
 [node name="playerKeyboard" parent="." unique_id=1364868426 instance=ExtResource("1_6jnww")]
-position = Vector2(584, 278)
+position = Vector2(539, 498)
 
 [node name="GrapplingHook" parent="playerKeyboard" unique_id=126776428 node_paths=PackedStringArray("player") instance=ExtResource("2_pqqk8")]
 player = NodePath("..")
@@ -59,3 +63,13 @@ texture = ExtResource("1_nfsgd")
 
 [node name="Mouse" parent="." unique_id=347734597 node_paths=PackedStringArray("player") instance=ExtResource("4_j5cgp")]
 player = NodePath("../playerKeyboard")
+
+[node name="enemy_grappler" parent="." unique_id=862453220 instance=ExtResource("5_pvra7")]
+
+[node name="Area2D" type="Area2D" parent="enemy_grappler" unique_id=726077139]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_grappler/Area2D" unique_id=844500513]
+shape = SubResource("RectangleShape2D_pvra7")
+
+[connection signal="body_entered" from="enemy_grappler/Area2D" to="playerKeyboard" method="_on_area_2d_body_entered"]
