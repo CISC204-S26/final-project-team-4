@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ly1n271g4se1"]
+
+[ext_resource type="Texture2D" uid="uid://bnvo3liqmd5tv" path="res://Art/Stone Pillar.png" id="1_p5n32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvt7f"]
+size = Vector2(126, 295.5)
+
+[node name="Stone Pillar" type="Area2D" unique_id=341478174]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1066650415]
+position = Vector2(124.5, 166.5)
+scale = Vector2(0.21191406, 0.21028645)
+texture = ExtResource("1_p5n32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=638096435]
+position = Vector2(122, 176.25)
+shape = SubResource("RectangleShape2D_uvt7f")

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://eue4x8h4icm6"]
+
+[ext_resource type="Texture2D" uid="uid://5sillja4teex" path="res://Art/Final room background.png" id="1_fxg2i"]
+[ext_resource type="PackedScene" uid="uid://ly1n271g4se1" path="res://Scenes/stone_pillar.tscn" id="2_5un6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxg2i"]
+size = Vector2(109.5, 1605)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5un6o"]
+size = Vector2(1563, 186)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq24h"]
+size = Vector2(1570, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_daj1l"]
+size = Vector2(106, 1609)
+
+[node name="Final Room" type="Node2D" unique_id=636659532]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1180373216]
+visibility_layer = 512
+position = Vector2(756.25, 83.999954)
+scale = Vector2(1.5307617, 1.0416666)
+texture = ExtResource("1_fxg2i")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=158043579]
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=1263459983]
+position = Vector2(-82, 81)
+shape = SubResource("RectangleShape2D_fxg2i")
+
+[node name="TopWall" type="CollisionShape2D" parent="Walls" unique_id=2002357592]
+position = Vector2(755.5, -809)
+shape = SubResource("RectangleShape2D_5un6o")
+
+[node name="BottomWall" type="CollisionShape2D" parent="Walls" unique_id=1311079126]
+position = Vector2(756, 924)
+shape = SubResource("RectangleShape2D_wq24h")
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=1452067909]
+position = Vector2(1593, 84.5)
+shape = SubResource("RectangleShape2D_daj1l")
+
+[node name="Stone Pillar" parent="." unique_id=341478174 instance=ExtResource("2_5un6o")]
+position = Vector2(210, 342)
+
+[node name="Stone Pillar2" parent="." unique_id=147101993 instance=ExtResource("2_5un6o")]
+position = Vector2(1140, 372)
+
+[node name="Stone Pillar3" parent="." unique_id=1395723975 instance=ExtResource("2_5un6o")]
+position = Vector2(528, -34)
+
+[node name="Stone Pillar4" parent="." unique_id=1412560885 instance=ExtResource("2_5un6o")]
+position = Vector2(969, -186)
+
+[node name="Stone Pillar5" parent="." unique_id=1765677781 instance=ExtResource("2_5un6o")]
+position = Vector2(191, -396)
