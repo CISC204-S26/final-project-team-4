@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://e2e7dtq8rsnv"]
 
-[ext_resource type="Texture2D" uid="uid://bm6ljet3qrdys" path="res://Art/icon.svg" id="1_d65uc"]
 [ext_resource type="Script" uid="uid://bjueqpu5q0cnf" path="res://Scripts/toggle_block.gd" id="1_ucetr"]
+[ext_resource type="Texture2D" uid="uid://bre3i31en5ak4" path="res://Art/Toggleblock.png" id="2_ucetr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucetr"]
-size = Vector2(120, 121)
+size = Vector2(100, 100)
 
 [node name="ToggleBlock" type="Area2D" unique_id=1078913243]
 script = ExtResource("1_ucetr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=237675122]
-position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_ucetr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1338283387]
-texture = ExtResource("1_d65uc")
+scale = Vector2(2, 2)
+texture = ExtResource("2_ucetr")

@@ -6,6 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmdac"]
 
 [node name="enemy_grappler" type="CharacterBody2D" unique_id=862453220]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_7j03j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=319839360]

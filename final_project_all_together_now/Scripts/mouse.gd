@@ -64,8 +64,11 @@ func swap_modes(mode):
 		current_mode = 3
 	if GlobalVariable.mode_2_unlock == false:
 		pass
+		if current_mode == 2:
 	if GlobalVariable.mode_3_unlock == false:
 		pass
+		if current_mode == 3:
+			current_mode = 1
 	if current_mode == 1:
 		$Crosshair1.show()
 		$Crosshair2.hide()
@@ -87,7 +90,7 @@ func ability1():
 			shot.direction = Vector2(0, 0)
 			shot.power = 25
 			get_tree().root.add_child(shot)
-			ability11_cooldown = 33
+			ability11_cooldown = 50
 			
 	if current_mode == 2:
 		if ability12_cooldown < 1:
@@ -127,7 +130,7 @@ func ability1():
 			shot9.direction = Vector2(1, 0)
 			shot9.power = 10
 			get_tree().root.add_child(shot9)
-			ability12_cooldown = 100
+			ability12_cooldown = 150
 	if current_mode == 3:
 		can_shoot_laser = true;
 	else:

@@ -10,6 +10,7 @@ size = Vector2(127, 128)
 [sub_resource type="CircleShape2D" id="CircleShape2D_pa65i"]
 
 [node name="playerKeyboard" type="CharacterBody2D" unique_id=1364868426]
+collision_layer = 2
 script = ExtResource("1_80o1m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=263756891]
@@ -65,7 +66,7 @@ region_rect = Rect2(65.5, -0.25, 34.5, 24.875)
 
 [node name="detector" type="Area2D" parent="." unique_id=1384452551]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 4
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detector" unique_id=986133918]
