@@ -65,6 +65,7 @@ func swap_modes(mode):
 	if GlobalVariable.mode_2_unlock == false:
 		pass
 		if current_mode == 2:
+			current_mode = 3
 	if GlobalVariable.mode_3_unlock == false:
 		pass
 		if current_mode == 3:
