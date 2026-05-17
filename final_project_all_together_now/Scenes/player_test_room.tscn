@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="3_ltrc1"]
 [ext_resource type="PackedScene" uid="uid://dvoeug3ul32lj" path="res://Scenes/test_enemy.tscn" id="4_7iy1w"]
 [ext_resource type="PackedScene" uid="uid://cknsghiynrcd" path="res://Scenes/shielded_enemy.tscn" id="4_wwmjm"]
-[ext_resource type="PackedScene" path="res://Scenes/enemy_grappler.tscn" id="6_ie4vr"]
+[ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="6_ie4vr"]
 [ext_resource type="Script" uid="uid://cn6m7idsxyjas" path="res://Scripts/enemy_grappler.gd" id="7_wwmjm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x656"]
