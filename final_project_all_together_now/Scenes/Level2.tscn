@@ -5,9 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/MCStandingSprite.png" id="2_ms0wi"]
 [ext_resource type="Texture2D" uid="uid://b74ycvt0jvvao" path="res://Art/platform_2.jpeg" id="4_n3cqh"]
 [ext_resource type="Texture2D" uid="uid://ciphk8m1teicj" path="res://Art/Stone Wall.png" id="5_jriq2"]
-[ext_resource type="Script" uid="uid://bbooh7u8gk2rd" path="res://Scenes/door_placeholder.gd" id="6_jriq2"]
+[ext_resource type="Script" path="res://Scenes/door_placeholder.gd" id="6_jriq2"]
 [ext_resource type="Texture2D" uid="uid://dhm7x2uroe6dk" path="res://Art/Cave.png" id="7_ehjmi"]
 [ext_resource type="Texture2D" uid="uid://bk8g6qyblxavf" path="res://Art/pixelated-lava-texture-in-glowing-8-bit-style-seamless-red-orange-game-background-with-hot-magma-look-vector.jpg" id="8_p4u3k"]
+[ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="9_70df5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5awjf"]
 size = Vector2(127, 128)
@@ -256,3 +257,6 @@ texture = ExtResource("8_p4u3k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lava_2" unique_id=1910496539]
 position = Vector2(5517, 0)
 shape = SubResource("RectangleShape2D_au75x")
+
+[node name="Mouse" parent="." unique_id=347734597 node_paths=PackedStringArray("player") instance=ExtResource("9_70df5")]
+player = NodePath("../playerKeyboard")
