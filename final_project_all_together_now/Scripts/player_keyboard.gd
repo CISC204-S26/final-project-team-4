@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var cooldown = 0
+var starting_pos = Vector2(0, 0)
 
 #grappling vars
 var is_grappling = false;
@@ -98,3 +99,8 @@ func apply_customization():
 func _ready():
 	print("--- PLAYER HAS SPAWNED IN THE LEVEL ---")
 	apply_customization()
+	starting_pos = position
+
+
+func take_damage():
+	position = starting_pos

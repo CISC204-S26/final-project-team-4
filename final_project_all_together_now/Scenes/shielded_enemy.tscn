@@ -118,5 +118,6 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=57269634]
 shape = SubResource("CircleShape2D_05nic")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
 [connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]

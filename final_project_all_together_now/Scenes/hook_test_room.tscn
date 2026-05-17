@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="1_6jnww"]
 [ext_resource type="Texture2D" uid="uid://bapwcmnvjovxn" path="res://Art/blackbg.png" id="1_nfsgd"]
 [ext_resource type="PackedScene" uid="uid://ce5nuuhdx3pa7" path="res://Scenes/grappling_hook.tscn" id="2_pqqk8"]
+[ext_resource type="PackedScene" uid="uid://dvoeug3ul32lj" path="res://Scenes/test_enemy.tscn" id="4_32ldy"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="4_j5cgp"]
 [ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="5_pvra7"]
 
@@ -60,6 +61,10 @@ position = Vector2(540.49994, 733.8035)
 rotation = -0.7853982
 scale = Vector2(1.8029515, -0.32445407)
 texture = ExtResource("1_nfsgd")
+
+[node name="TestEnemy" parent="." unique_id=216584471 instance=ExtResource("4_32ldy")]
+position = Vector2(1237, 326)
+health = 1
 
 [node name="Mouse" parent="." unique_id=347734597 node_paths=PackedStringArray("player") instance=ExtResource("4_j5cgp")]
 player = NodePath("../playerKeyboard")

@@ -62,14 +62,12 @@ func swap_modes(mode):
 		current_mode = 1
 	if current_mode < 1:
 		current_mode = 3
-	if GlobalVariable.mode_2_unlock == false:
-		pass
-		if current_mode == 2:
-			current_mode = 3
-	if GlobalVariable.mode_3_unlock == false:
-		pass
-		if current_mode == 3:
-			current_mode = 1
+	#if GlobalVariable.mode_2_unlock == false:
+		#if current_mode == 2:
+		#	current_mode = 3
+	#if GlobalVariable.mode_3_unlock == false:
+	#	if current_mode == 3:
+	#		current_mode = 1
 	if current_mode == 1:
 		$Crosshair1.show()
 		$Crosshair2.hide()
@@ -92,7 +90,6 @@ func ability1():
 			shot.power = 25
 			get_tree().root.add_child(shot)
 			ability11_cooldown = 50
-			
 	if current_mode == 2:
 		if ability12_cooldown < 1:
 			var shot1 = bullet.instantiate()
@@ -162,10 +159,12 @@ func update_laser() -> void:
 	var end = start + direction;
 	var query = PhysicsRayQueryParameters2D.create(start, end);
 	query.collide_with_areas = true;
-	query.collide_with_bodies = true;
+	query.collide_with_bodies = false;
 	query.exclude = [player.get_rid()];
 	#query.exclude = [$"../../Mouse".get_rid()];
-	var hit = space_state.intersect_ray(query);
+	var result = space_state.intersect_ray(query);
+	if result:
+		print("hit")
 	
 	laser.visible = true;
 
