@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="1_0plju"]
 [ext_resource type="Texture2D" uid="uid://dv1i5nh404ctl" path="res://Art/cave _background.jpeg" id="1_ms0wi"]
-[ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/MCStandingSprite.png" id="2_ms0wi"]
 [ext_resource type="Texture2D" uid="uid://b74ycvt0jvvao" path="res://Art/platform_2.jpeg" id="4_n3cqh"]
 [ext_resource type="Texture2D" uid="uid://ciphk8m1teicj" path="res://Art/Stone Wall.png" id="5_jriq2"]
 [ext_resource type="Script" path="res://Scenes/door_placeholder.gd" id="6_jriq2"]
@@ -52,11 +51,6 @@ texture = ExtResource("1_ms0wi")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="playerKeyboard" unique_id=149624542]
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_5awjf")
-
-[node name="Sprite2D3" type="Sprite2D" parent="playerKeyboard" unique_id=826593033]
-position = Vector2(-3.0517578e-05, 0)
-scale = Vector2(2.6200001, 2.455)
-texture = ExtResource("2_ms0wi")
 
 [node name="detector2" type="Area2D" parent="playerKeyboard" unique_id=1310261807]
 collision_layer = 0

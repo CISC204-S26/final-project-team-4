@@ -3,17 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://5sillja4teex" path="res://Art/Final room background.png" id="1_fxg2i"]
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="1_o77y6"]
 [ext_resource type="PackedScene" uid="uid://ly1n271g4se1" path="res://Scenes/stone_pillar.tscn" id="2_5un6o"]
-[ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/MCStandingSprite.png" id="2_jsg6b"]
 [ext_resource type="Texture2D" uid="uid://b74ycvt0jvvao" path="res://Art/platform_2.jpeg" id="3_wq24h"]
 [ext_resource type="PackedScene" uid="uid://dvoeug3ul32lj" path="res://Scenes/test_enemy.tscn" id="4_daj1l"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="6_jsg6b"]
 [ext_resource type="Texture2D" uid="uid://b34hmypprjlts" path="res://Art/LevelSelectLogo.png" id="7_1xycw"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xycw"]
-size = Vector2(127, 128)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dmoq2"]
-radius = 10.342252
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxg2i"]
 size = Vector2(109.5, 1605)
@@ -30,32 +23,13 @@ size = Vector2(106, 1609)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jc4e8"]
 size = Vector2(1558, 151)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xycw"]
+size = Vector2(127, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dmoq2"]
+radius = 10.342252
+
 [node name="Final Room" type="Node2D" unique_id=636659532]
-
-[node name="playerKeyboard" parent="." unique_id=1364868426 groups=["player"] instance=ExtResource("1_o77y6")]
-position = Vector2(128, 630)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="playerKeyboard" unique_id=441590941]
-position = Vector2(0, 10)
-shape = SubResource("RectangleShape2D_1xycw")
-
-[node name="Sprite2D" type="Sprite2D" parent="playerKeyboard" unique_id=832715760]
-position = Vector2(-3.0517578e-05, 0)
-scale = Vector2(2.6200001, 2.455)
-texture = ExtResource("2_jsg6b")
-
-[node name="detector2" type="Area2D" parent="playerKeyboard" unique_id=1879778353]
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="playerKeyboard/detector2" unique_id=319327090]
-position = Vector2(5.9999695, 10)
-scale = Vector2(8.455564, 10.502764)
-shape = SubResource("CircleShape2D_dmoq2")
-
-[node name="Camera2D" type="Camera2D" parent="playerKeyboard" unique_id=1423795080]
-position = Vector2(6, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1180373216]
 visibility_layer = 512
@@ -120,3 +94,23 @@ region_rect = Rect2(0, 0, 52, 28.75)
 
 [node name="Mouse" parent="." unique_id=347734597 instance=ExtResource("6_jsg6b")]
 position = Vector2(763, 795)
+
+[node name="playerKeyboard" parent="." unique_id=1364868426 groups=["player"] instance=ExtResource("1_o77y6")]
+position = Vector2(128, 630)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="playerKeyboard" unique_id=441590941]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_1xycw")
+
+[node name="detector2" type="Area2D" parent="playerKeyboard" unique_id=1879778353]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerKeyboard/detector2" unique_id=319327090]
+position = Vector2(5.9999695, 10)
+scale = Vector2(8.455564, 10.502764)
+shape = SubResource("CircleShape2D_dmoq2")
+
+[node name="Camera2D" type="Camera2D" parent="playerKeyboard" unique_id=1423795080]
+position = Vector2(6, 10)
