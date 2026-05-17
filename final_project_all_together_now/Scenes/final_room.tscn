@@ -2,11 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://5sillja4teex" path="res://Art/Final room background.png" id="1_fxg2i"]
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="1_o77y6"]
-[ext_resource type="PackedScene" uid="uid://ly1n271g4se1" path="res://Scenes/stone_pillar.tscn" id="2_5un6o"]
+[ext_resource type="PackedScene" path="res://Scenes/stone_pillar.tscn" id="2_5un6o"]
 [ext_resource type="Texture2D" uid="uid://b74ycvt0jvvao" path="res://Art/platform_2.jpeg" id="3_wq24h"]
 [ext_resource type="PackedScene" uid="uid://dvoeug3ul32lj" path="res://Scenes/test_enemy.tscn" id="4_daj1l"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="6_jsg6b"]
 [ext_resource type="Texture2D" uid="uid://b34hmypprjlts" path="res://Art/LevelSelectLogo.png" id="7_1xycw"]
+[ext_resource type="PackedScene" uid="uid://ce5nuuhdx3pa7" path="res://Scenes/grappling_hook.tscn" id="8_1xycw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxg2i"]
 size = Vector2(109.5, 1605)
@@ -92,9 +93,6 @@ texture = ExtResource("7_1xycw")
 region_enabled = true
 region_rect = Rect2(0, 0, 52, 28.75)
 
-[node name="Mouse" parent="." unique_id=347734597 instance=ExtResource("6_jsg6b")]
-position = Vector2(763, 795)
-
 [node name="playerKeyboard" parent="." unique_id=1364868426 groups=["player"] instance=ExtResource("1_o77y6")]
 position = Vector2(128, 630)
 
@@ -112,5 +110,12 @@ position = Vector2(5.9999695, 10)
 scale = Vector2(8.455564, 10.502764)
 shape = SubResource("CircleShape2D_dmoq2")
 
+[node name="GrapplingHook" parent="playerKeyboard" unique_id=126776428 node_paths=PackedStringArray("player") instance=ExtResource("8_1xycw")]
+player = NodePath("..")
+
 [node name="Camera2D" type="Camera2D" parent="playerKeyboard" unique_id=1423795080]
 position = Vector2(6, 10)
+
+[node name="Mouse" parent="." unique_id=347734597 node_paths=PackedStringArray("player") instance=ExtResource("6_jsg6b")]
+position = Vector2(763, 795)
+player = NodePath("../playerKeyboard")

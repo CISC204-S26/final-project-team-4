@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://yg2pjxr0y1b0"]
+[gd_scene format=3 uid="uid://db7syxyihyiy0"]
 
 [ext_resource type="Texture2D" uid="uid://d32i1byadf5cq" path="res://Art/Mountain background.png" id="1_6cvus"]
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="3_tjeu2"]
 [ext_resource type="PackedScene" uid="uid://ce5nuuhdx3pa7" path="res://Scenes/grappling_hook.tscn" id="4_4chlb"]
-[ext_resource type="PackedScene" uid="uid://d3sb8nu7oaa57" path="res://Scenes/cloud_floor.tscn" id="5_4chlb"]
+[ext_resource type="PackedScene" path="res://Scenes/cloud_floor.tscn" id="5_4chlb"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="5_5kskf"]
-[ext_resource type="PackedScene" uid="uid://bkxihocn0ku03" path="res://Scenes/stone_wall.tscn" id="6_5kskf"]
+[ext_resource type="PackedScene" path="res://Scenes/stone_wall.tscn" id="6_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="7_5kskf"]
-[ext_resource type="Script" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
+[ext_resource type="Script" uid="uid://bbooh7u8gk2rd" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
 [ext_resource type="Texture2D" uid="uid://x4wmgoeumi51" path="res://Art/pngtree-a-black-hole-pixel-art-blue-asset-ui-pixelated-low-res-png-image_17358933.webp" id="8_kbsl7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eako0"]
@@ -114,6 +114,7 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("8_htqsl")
 next_scene = "uid://l83j2wdfh6ms"
+unlock = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_placeholder" unique_id=213097828]
 light_mask = 3

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="1_0plju"]
 [ext_resource type="Texture2D" uid="uid://dv1i5nh404ctl" path="res://Art/cave _background.jpeg" id="1_ms0wi"]
+[ext_resource type="PackedScene" uid="uid://ce5nuuhdx3pa7" path="res://Scenes/grappling_hook.tscn" id="3_70df5"]
 [ext_resource type="Texture2D" uid="uid://b74ycvt0jvvao" path="res://Art/platform_2.jpeg" id="4_n3cqh"]
 [ext_resource type="Texture2D" uid="uid://ciphk8m1teicj" path="res://Art/Stone Wall.png" id="5_jriq2"]
 [ext_resource type="Script" uid="uid://bbooh7u8gk2rd" path="res://Scenes/door_placeholder.gd" id="6_jriq2"]
@@ -65,6 +66,9 @@ shape = SubResource("CircleShape2D_n3cqh")
 [node name="Camera2D" type="Camera2D" parent="playerKeyboard" unique_id=175429053]
 position = Vector2(6, 10)
 
+[node name="GrapplingHook" parent="playerKeyboard" unique_id=126776428 node_paths=PackedStringArray("player") instance=ExtResource("3_70df5")]
+player = NodePath("..")
+
 [node name="Ground_1" type="StaticBody2D" parent="." unique_id=2007041995]
 position = Vector2(4, 284)
 
@@ -108,6 +112,7 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("6_jriq2")
 next_scene = "uid://8p8f28sys0jh"
+unlock = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_placeholder" unique_id=1628550305]
 position = Vector2(-299.5, 63.5)
