@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/cloud_floor.tscn" id="5_4chlb"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="5_5kskf"]
 [ext_resource type="PackedScene" path="res://Scenes/stone_wall.tscn" id="6_5kskf"]
-[ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="7_5kskf"]
+[ext_resource type="PackedScene" uid="uid://cknsghiynrcd" path="res://Scenes/shielded_enemy.tscn" id="8_eako0"]
 [ext_resource type="Script" uid="uid://bbooh7u8gk2rd" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
 [ext_resource type="Texture2D" uid="uid://x4wmgoeumi51" path="res://Art/pngtree-a-black-hole-pixel-art-blue-asset-ui-pixelated-low-res-png-image_17358933.webp" id="8_kbsl7"]
 
@@ -21,9 +21,6 @@ size = Vector2(1501, 148)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2golk"]
 size = Vector2(117, 2236)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_htqsl"]
-size = Vector2(33, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kbsl7"]
 size = Vector2(189.5, 101.5)
@@ -97,17 +94,6 @@ scale = Vector2(2, 1.15)
 position = Vector2(10, -1346)
 scale = Vector2(5, 1)
 
-[node name="enemy_grappler" parent="." unique_id=862453220 instance=ExtResource("7_5kskf")]
-position = Vector2(538, 108)
-
-[node name="Area2D" type="Area2D" parent="enemy_grappler" unique_id=1120921600]
-collision_layer = 3
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_grappler/Area2D" unique_id=1803575967]
-position = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_htqsl")
-
 [node name="Door_placeholder" type="Area2D" parent="." unique_id=1040862396]
 position = Vector2(559, 84)
 collision_layer = 3
@@ -127,6 +113,9 @@ position = Vector2(-195.75, 86.25)
 scale = Vector2(0.3041667, 0.25138888)
 texture = ExtResource("8_kbsl7")
 
+[node name="ShieldedEnemy" parent="." unique_id=1822803060 instance=ExtResource("8_eako0")]
+position = Vector2(915, 217)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1390210338]
 position = Vector2(536, 685)
 scale = Vector2(4.473773, 2.3328907)
@@ -139,5 +128,3 @@ shape = SubResource("RectangleShape2D_svhfh")
 [node name="Mouse" parent="." unique_id=347734597 node_paths=PackedStringArray("player") instance=ExtResource("5_5kskf")]
 position = Vector2(5, 0)
 player = NodePath("../playerKeyboard")
-
-[connection signal="body_entered" from="enemy_grappler/Area2D" to="playerKeyboard" method="_on_area_2d_body_entered"]

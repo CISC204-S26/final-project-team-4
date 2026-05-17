@@ -8,6 +8,7 @@ var target
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	start_position = position
 	$AnimatedSprite2D.play("normal")
 
 

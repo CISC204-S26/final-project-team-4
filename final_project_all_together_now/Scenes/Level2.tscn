@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="1_0plju"]
 [ext_resource type="Texture2D" uid="uid://dv1i5nh404ctl" path="res://Art/cave _background.jpeg" id="1_ms0wi"]
+[ext_resource type="PackedScene" uid="uid://cknsghiynrcd" path="res://Scenes/shielded_enemy.tscn" id="2_au75x"]
+[ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="3_62f1r"]
 [ext_resource type="PackedScene" uid="uid://ce5nuuhdx3pa7" path="res://Scenes/grappling_hook.tscn" id="3_70df5"]
 [ext_resource type="Texture2D" uid="uid://b74ycvt0jvvao" path="res://Art/platform_2.jpeg" id="4_n3cqh"]
 [ext_resource type="Texture2D" uid="uid://ciphk8m1teicj" path="res://Art/Stone Wall.png" id="5_jriq2"]
@@ -46,6 +48,17 @@ visibility_layer = 2
 position = Vector2(1903.0001, -1934)
 scale = Vector2(7.110352, 6.844238)
 texture = ExtResource("1_ms0wi")
+
+[node name="ShieldedEnemy" parent="." unique_id=1822803060 instance=ExtResource("2_au75x")]
+position = Vector2(1358, -102)
+
+[node name="ShieldedEnemy2" parent="." unique_id=652487441 instance=ExtResource("2_au75x")]
+position = Vector2(3869, -497)
+
+[node name="ShieldedEnemy3" parent="." unique_id=128968973 instance=ExtResource("2_au75x")]
+position = Vector2(769, -1409)
+
+[node name="enemy_grappler" parent="." unique_id=862453220 instance=ExtResource("3_62f1r")]
 
 [node name="playerKeyboard" parent="." unique_id=1364868426 groups=["player"] instance=ExtResource("1_0plju")]
 
@@ -260,9 +273,6 @@ texture = ExtResource("8_p4u3k")
 position = Vector2(5517, 0)
 shape = SubResource("RectangleShape2D_au75x")
 
-[node name="Mouse" parent="." unique_id=347734597 node_paths=PackedStringArray("player") instance=ExtResource("9_70df5")]
-player = NodePath("../playerKeyboard")
-
 [node name="Ground_9" type="StaticBody2D" parent="." unique_id=354410505]
 position = Vector2(4354, -22.999878)
 rotation = -0.62133723
@@ -291,3 +301,6 @@ position = Vector2(161.05542, 505.10104)
 rotation = -1.5934856
 scale = Vector2(0.6039568, 1.0794235)
 texture = ExtResource("5_jriq2")
+
+[node name="Mouse" parent="." unique_id=347734597 node_paths=PackedStringArray("player") instance=ExtResource("9_70df5")]
+player = NodePath("../playerKeyboard")
