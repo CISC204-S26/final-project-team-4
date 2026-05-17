@@ -104,3 +104,8 @@ func _ready():
 
 func take_damage():
 	position = starting_pos
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	take_damage()
+	$"../enemy_grappler".position = Vector2(538.0, 108.0)
