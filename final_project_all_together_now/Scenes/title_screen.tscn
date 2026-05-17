@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://eug52b5gldkg" path="res://Art/Map.png" id="9_sqelc"]
 [ext_resource type="Script" uid="uid://de1mj8gyvt2hj" path="res://Scripts/gamestart.gd" id="9_w5sh6"]
 [ext_resource type="Texture2D" uid="uid://dfjy0eb00jdlo" path="res://Art/grapple_hook.png" id="10_w5sh6"]
+[ext_resource type="Texture2D" uid="uid://o3dqvy0oj64k" path="res://Art/Logo.png" id="12_w5sh6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vd4x"]
 bg_color = Color(1, 0.1254902, 0.19607843, 0.654902)
@@ -67,14 +68,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6vd4x")
 
 [node name="MarginContainer" type="MarginContainer" parent="HelmetContainer" unique_id=1247999826]
 layout_mode = 2
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1372747507]
-offset_left = 56.0
-offset_top = 21.0
-offset_right = 1430.0
-offset_bottom = 238.0
-theme_override_font_sizes/normal_font_size = 158
-text = "A Climber's Quest"
 
 [node name="Grass" type="Sprite2D" parent="." unique_id=1471162929]
 position = Vector2(1247.3452, 563.9142)
@@ -190,7 +183,7 @@ offset_bottom = 844.0
 theme_override_font_sizes/font_size = 73
 text = "Start"
 script = ExtResource("9_w5sh6")
-scene_to_load = "uid://bu26keejud52e"
+scene_to_load = "uid://yg2pjxr0y1b0"
 
 [node name="Map" type="Sprite2D" parent="." unique_id=2059268804]
 position = Vector2(539.24994, 741)
@@ -222,6 +215,27 @@ theme_override_font_sizes/font_size = 55
 text = "Level
 Select
 "
+
+[node name="Logo - 1" type="Sprite2D" parent="." unique_id=2074133215]
+position = Vector2(113.28754, 78)
+scale = Vector2(9.714058, 13.461538)
+texture = ExtResource("12_w5sh6")
+region_enabled = true
+region_rect = Rect2(47, 50.25, 16, 16)
+
+[node name="Logo - 2" type="Sprite2D" parent="." unique_id=692884205]
+position = Vector2(632, 111.00001)
+scale = Vector2(10.561118, 13.461538)
+texture = ExtResource("12_w5sh6")
+region_enabled = true
+region_rect = Rect2(19, 65.25, 81, 10.5)
+
+[node name="Logo - 3" type="Sprite2D" parent="." unique_id=224294718]
+position = Vector2(1226.9375, 115)
+scale = Vector2(10.002783, 13.461538)
+texture = ExtResource("12_w5sh6")
+region_enabled = true
+region_rect = Rect2(29.5, 75.75, 45.5, 9.5)
 
 [connection signal="pressed" from="HelmetButton" to="." method="_on_helmet_button_pressed"]
 [connection signal="pressed" from="HelmetBack" to="." method="_on_helmet_back_pressed"]
