@@ -7,12 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="5_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkxihocn0ku03" path="res://Scenes/stone_wall.tscn" id="6_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="7_5kskf"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cvus"]
-size = Vector2(1503.5, 129.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiqv1"]
-size = Vector2(106, 2235)
+[ext_resource type="Script" uid="uid://bbooh7u8gk2rd" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7chr"]
 size = Vector2(1501, 148)
@@ -23,6 +18,9 @@ size = Vector2(117, 2236)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htqsl"]
 size = Vector2(33, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbsl7"]
+size = Vector2(189.5, 101.5)
+
 [node name="Start-Floor" type="Node2D" unique_id=89315249]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836593421]
@@ -30,16 +28,14 @@ position = Vector2(753, -218)
 scale = Vector2(0.97737646, 2.1804197)
 texture = ExtResource("1_6cvus")
 
-[node name="Walls" type="Area2D" parent="." unique_id=514320107]
+[node name="Walls" type="StaticBody2D" parent="." unique_id=490919875]
 position = Vector2(0, -4)
 
-[node name="Walltop" type="CollisionShape2D" parent="Walls" unique_id=458502810]
+[node name="Walltop" type="CollisionShape2D" parent="Walls" unique_id=1686282170]
 position = Vector2(734, -1396)
-shape = SubResource("RectangleShape2D_6cvus")
 
-[node name="Wallleft" type="CollisionShape2D" parent="Walls" unique_id=2022072292]
+[node name="Wallleft" type="CollisionShape2D" parent="Walls" unique_id=1641824735]
 position = Vector2(-53, -207.5)
-shape = SubResource("RectangleShape2D_qiqv1")
 
 [node name="Wallbottom" type="CollisionShape2D" parent="Walls" unique_id=741793454]
 position = Vector2(751.5, 976)
@@ -49,7 +45,7 @@ shape = SubResource("RectangleShape2D_r7chr")
 position = Vector2(1563, -219)
 shape = SubResource("RectangleShape2D_2golk")
 
-[node name="playerKeyboard" parent="." unique_id=1364868426 instance=ExtResource("3_tjeu2")]
+[node name="playerKeyboard" parent="." unique_id=1364868426 groups=["player"] instance=ExtResource("3_tjeu2")]
 position = Vector2(100, 543)
 scale = Vector2(0.42648658, 0.37039793)
 
@@ -95,3 +91,18 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_grappler/Area2D" unique_id=1803575967]
 shape = SubResource("RectangleShape2D_htqsl")
+
+[node name="Door_placeholder" type="Area2D" parent="." unique_id=1040862396]
+position = Vector2(1208, -566)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("8_htqsl")
+next_scene = "uid://l83j2wdfh6ms"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_placeholder" unique_id=213097828]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(189, -586)
+shape = SubResource("RectangleShape2D_kbsl7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door_placeholder" unique_id=2020618379]

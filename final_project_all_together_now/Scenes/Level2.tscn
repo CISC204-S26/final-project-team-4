@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c7w5br5fdk5kj" path="res://Art/MCStandingSprite.png" id="2_ms0wi"]
 [ext_resource type="Texture2D" uid="uid://b74ycvt0jvvao" path="res://Art/platform_2.jpeg" id="4_n3cqh"]
 [ext_resource type="Texture2D" uid="uid://ciphk8m1teicj" path="res://Art/Stone Wall.png" id="5_jriq2"]
+[ext_resource type="Script" uid="uid://bbooh7u8gk2rd" path="res://Scenes/door_placeholder.gd" id="6_jriq2"]
+[ext_resource type="Texture2D" uid="uid://dhm7x2uroe6dk" path="res://Art/Cave.png" id="7_ehjmi"]
+[ext_resource type="Texture2D" uid="uid://bk8g6qyblxavf" path="res://Art/pixelated-lava-texture-in-glowing-8-bit-style-seamless-red-orange-game-background-with-hot-magma-look-vector.jpg" id="8_p4u3k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5awjf"]
 size = Vector2(127, 128)
@@ -16,10 +19,7 @@ radius = 10.342252
 size = Vector2(1558, 151)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejprb"]
-size = Vector2(497, 360)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0plju"]
-size = Vector2(554.3554, 138.01814)
+size = Vector2(524.5, 265)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3cqh"]
 size = Vector2(8902, 851.875)
@@ -33,24 +33,27 @@ size = Vector2(8629, 910)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70df5"]
 size = Vector2(1299, 8382)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_au75x"]
+size = Vector2(4866, 589)
+
 [node name="Level2" type="Node2D" unique_id=337573815]
 position = Vector2(14, -216)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=8399783]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(1793, -998.00006)
+position = Vector2(1793.0001, -1136)
 scale = Vector2(7.110352, 6.844238)
 texture = ExtResource("1_ms0wi")
 
-[node name="playerKeyboard" parent="." unique_id=1364868426 instance=ExtResource("1_0plju")]
+[node name="playerKeyboard" parent="." unique_id=1364868426 groups=["player"] instance=ExtResource("1_0plju")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="playerKeyboard" unique_id=149624542]
-position = Vector2(0.5, 1)
+position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_5awjf")
 
 [node name="Sprite2D3" type="Sprite2D" parent="playerKeyboard" unique_id=826593033]
-position = Vector2(-1.0000002, 10.000001)
+position = Vector2(-3.0517578e-05, 0)
 scale = Vector2(2.6200001, 2.455)
 texture = ExtResource("2_ms0wi")
 
@@ -60,11 +63,12 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerKeyboard/detector2" unique_id=29991470]
-position = Vector2(3.999999, 0)
+position = Vector2(5.9999695, 10)
 scale = Vector2(8.455564, 10.502764)
 shape = SubResource("CircleShape2D_n3cqh")
 
 [node name="Camera2D" type="Camera2D" parent="playerKeyboard" unique_id=175429053]
+position = Vector2(6, 10)
 
 [node name="Ground_1" type="StaticBody2D" parent="." unique_id=2007041995]
 position = Vector2(4, 284)
@@ -103,14 +107,21 @@ rotation = -1.5934856
 scale = Vector2(0.6039568, 1.0794235)
 texture = ExtResource("5_jriq2")
 
-[node name="Door_placeholder" type="StaticBody2D" parent="." unique_id=1539097463]
-position = Vector2(3686, -2600)
+[node name="Door_placeholder" type="Area2D" parent="." unique_id=1820721668]
+position = Vector2(3686, -2613)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("6_jriq2")
+next_scene = "uid://eue4x8h4icm6"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_placeholder" unique_id=1628550305]
-position = Vector2(-258.5, 22)
+position = Vector2(-299.5, 63.5)
 shape = SubResource("RectangleShape2D_ejprb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Door_placeholder" unique_id=1857461665]
+position = Vector2(-276.49997, 120.99991)
+scale = Vector2(2.1269233, 2.4571428)
+texture = ExtResource("7_ehjmi")
 
 [node name="Ground_4" type="StaticBody2D" parent="." unique_id=2142860953]
 position = Vector2(4086, -182)
@@ -123,38 +134,6 @@ shape = SubResource("RectangleShape2D_jriq2")
 position = Vector2(-13.9999485, 8.000015)
 scale = Vector2(1.6510638, 0.5714286)
 texture = ExtResource("4_n3cqh")
-
-[node name="Death_zone_1" type="Area2D" parent="." unique_id=1806924827]
-position = Vector2(3133, -274)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Death_zone_1" unique_id=259606980]
-position = Vector2(0, 361)
-rotation = -0.26529005
-shape = SubResource("RectangleShape2D_0plju")
-
-[node name="ColorRect" type="ColorRect" parent="Death_zone_1" unique_id=639306463]
-offset_left = -306.99997
-offset_top = 385.0
-offset_right = 265.48886
-offset_bottom = 536.7284
-rotation = -0.28972465
-color = Color(1, 0.100000024, 0.100000024, 1)
-
-[node name="Death_zone_2" type="Area2D" parent="." unique_id=813300760]
-position = Vector2(1102, 63)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Death_zone_2" unique_id=1447651072]
-position = Vector2(0, 376)
-rotation = -0.26529005
-shape = SubResource("RectangleShape2D_0plju")
-
-[node name="ColorRect" type="ColorRect" parent="Death_zone_2" unique_id=2014286558]
-offset_left = -306.99997
-offset_top = 385.0
-offset_right = 265.48886
-offset_bottom = 536.7284
-rotation = -0.28972465
-color = Color(1, 0.100000024, 0.100000024, 1)
 
 [node name="Ground_5" type="StaticBody2D" parent="." unique_id=3882775]
 position = Vector2(811, -852)
@@ -245,3 +224,35 @@ position = Vector2(-137.69302, -343.72662)
 rotation = 0.26529005
 scale = Vector2(1.6510638, 0.46914542)
 texture = ExtResource("4_n3cqh")
+
+[node name="Lava_1" type="Area2D" parent="." unique_id=307461427]
+position = Vector2(-370, 495)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("6_jriq2")
+next_scene = "uid://l83j2wdfh6ms"
+
+[node name="Sprite2D" type="Sprite2D" parent="Lava_1" unique_id=279042593]
+position = Vector2(4157, 50)
+scale = Vector2(1.4166666, 0.64362854)
+texture = ExtResource("8_p4u3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava_1" unique_id=1629426308]
+position = Vector2(1919, 93.5)
+shape = SubResource("RectangleShape2D_au75x")
+
+[node name="Lava_2" type="Area2D" parent="." unique_id=212660360]
+position = Vector2(-370, 495)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("6_jriq2")
+next_scene = "uid://l83j2wdfh6ms"
+
+[node name="Sprite2D" type="Sprite2D" parent="Lava_2" unique_id=1338743006]
+position = Vector2(1181, 74.24999)
+scale = Vector2(1.7635416, 0.59017277)
+texture = ExtResource("8_p4u3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava_2" unique_id=1910496539]
+position = Vector2(5517, 0)
+shape = SubResource("RectangleShape2D_au75x")
