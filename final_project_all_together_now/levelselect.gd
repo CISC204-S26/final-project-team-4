@@ -7,11 +7,14 @@ func _on_level_1_button_pressed() -> void:
 
 func _on_level_2_button_pressed() -> void:
 	var error_code = get_tree().change_scene_to_file("res://Scenes/Level2.tscn")
+	GlobalVariable.mode_2_unlock = true
 	if error_code != OK:
 		print("ERROR: Could not load Level 2. Check your file path or file spelling!")
 
 func _on_level_3_button_pressed() -> void:
 	var error_code = get_tree().change_scene_to_file("res://Scenes/final_room.tscn")
+	GlobalVariable.mode_3_unlock = true
+	GlobalVariable.mode_2_unlock = true
 	if error_code != OK:
 		print("ERROR: Could not load Level 3. Check your file path or file spelling!")
 
