@@ -6,8 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://d3sb8nu7oaa57" path="res://Scenes/cloud_floor.tscn" id="5_4chlb"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="5_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkxihocn0ku03" path="res://Scenes/stone_wall.tscn" id="6_5kskf"]
-[ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="7_5kskf"]
-[ext_resource type="Script" uid="uid://bbooh7u8gk2rd" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
+[ext_resource type="PackedScene" path="res://Scenes/enemy_grappler.tscn" id="7_5kskf"]
+[ext_resource type="Script" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eako0"]
+size = Vector2(1665, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf0la"]
+size = Vector2(67, 2191)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7chr"]
 size = Vector2(1501, 148)
@@ -22,6 +28,7 @@ size = Vector2(33, 30)
 size = Vector2(189.5, 101.5)
 
 [node name="Start-Floor" type="Node2D" unique_id=89315249]
+metadata/_edit_horizontal_guides_ = [-891.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1836593421]
 position = Vector2(753, -218)
@@ -32,10 +39,12 @@ texture = ExtResource("1_6cvus")
 position = Vector2(0, -4)
 
 [node name="Walltop" type="CollisionShape2D" parent="Walls" unique_id=1686282170]
-position = Vector2(734, -1396)
+position = Vector2(794.5, -1402.5)
+shape = SubResource("RectangleShape2D_eako0")
 
 [node name="Wallleft" type="CollisionShape2D" parent="Walls" unique_id=1641824735]
-position = Vector2(-53, -207.5)
+position = Vector2(-29.5, -180.5)
+shape = SubResource("RectangleShape2D_sf0la")
 
 [node name="Wallbottom" type="CollisionShape2D" parent="Walls" unique_id=741793454]
 position = Vector2(751.5, 976)
