@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="5_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkxihocn0ku03" path="res://Scenes/stone_wall.tscn" id="6_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="7_5kskf"]
-[ext_resource type="Script" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
+[ext_resource type="Script" uid="uid://bbooh7u8gk2rd" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eako0"]
 size = Vector2(1665, 69)
@@ -64,8 +64,6 @@ scale = Vector2(0.42648658, 0.37039793)
 [node name="GrapplingHook" parent="playerKeyboard" unique_id=126776428 node_paths=PackedStringArray("player") instance=ExtResource("4_4chlb")]
 position = Vector2(4.689481, -5.399597)
 player = NodePath("..")
-
-[node name="Mouse" parent="." unique_id=347734597 instance=ExtResource("5_5kskf")]
 
 [node name="CloudFloor" parent="." unique_id=1524637798 instance=ExtResource("5_4chlb")]
 position = Vector2(255, -42)
@@ -127,3 +125,6 @@ scale = Vector2(4.473773, 2.3328907)
 position = Vector2(48.586685, -7.2871094)
 scale = Vector2(4.8341336, 3.544904)
 shape = SubResource("RectangleShape2D_svhfh")
+
+[node name="Mouse" parent="." unique_id=347734597 node_paths=PackedStringArray("player") instance=ExtResource("5_5kskf")]
+player = NodePath("../playerKeyboard")
