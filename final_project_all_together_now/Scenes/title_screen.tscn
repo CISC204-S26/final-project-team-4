@@ -226,7 +226,7 @@ position = Vector2(632, 111.00001)
 scale = Vector2(10.561118, 13.461538)
 texture = ExtResource("12_w5sh6")
 region_enabled = true
-region_rect = Rect2(19, 65.25, 81, 10.5)
+region_rect = Rect2(18.5, 65.25, 81.5, 10.5)
 
 [node name="Logo - 3" type="Sprite2D" parent="." unique_id=224294718]
 position = Vector2(1226.9375, 115)
