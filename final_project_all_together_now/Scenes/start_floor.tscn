@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d3sb8nu7oaa57" path="res://Scenes/cloud_floor.tscn" id="5_4chlb"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="5_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkxihocn0ku03" path="res://Scenes/stone_wall.tscn" id="6_5kskf"]
-[ext_resource type="PackedScene" path="res://Scenes/enemy_grappler.tscn" id="7_5kskf"]
+[ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="7_5kskf"]
 [ext_resource type="Script" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eako0"]
@@ -26,6 +26,9 @@ size = Vector2(33, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kbsl7"]
 size = Vector2(189.5, 101.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svhfh"]
+size = Vector2(69.13955, 20)
 
 [node name="Start-Floor" type="Node2D" unique_id=89315249]
 metadata/_edit_horizontal_guides_ = [-891.0]
@@ -115,3 +118,12 @@ position = Vector2(189, -586)
 shape = SubResource("RectangleShape2D_kbsl7")
 
 [node name="Sprite2D" type="Sprite2D" parent="Door_placeholder" unique_id=2020618379]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1390210338]
+position = Vector2(536, 685)
+scale = Vector2(4.473773, 2.3328907)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=388332091]
+position = Vector2(48.586685, -7.2871094)
+scale = Vector2(4.8341336, 3.544904)
+shape = SubResource("RectangleShape2D_svhfh")
