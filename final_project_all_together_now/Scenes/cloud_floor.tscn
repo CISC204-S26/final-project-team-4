@@ -2,16 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://crotvvcmtyty6" path="res://Art/Cloud image.png" id="1_qh26t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6g8nn"]
-size = Vector2(429.5, 95)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh26t"]
+size = Vector2(426, 50)
 
-[node name="CloudFloor" type="Area2D" unique_id=1524637798]
+[node name="CloudFloor" type="StaticBody2D" unique_id=1993898581]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=384952003]
-position = Vector2(179.24998, 14)
+position = Vector2(140, -36)
 scale = Vector2(0.30045575, 0.14453125)
 texture = ExtResource("1_qh26t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2018483413]
-position = Vector2(167.25, 15.5)
-shape = SubResource("RectangleShape2D_6g8nn")
+position = Vector2(128, -32)
+shape = SubResource("RectangleShape2D_qh26t")

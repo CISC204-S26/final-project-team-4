@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drm01"]
 size = Vector2(97, 543)
 
-[node name="StoneWall" type="Area2D" unique_id=421973786]
+[node name="StoneWall" type="StaticBody2D" unique_id=610887633]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2098931965]
 position = Vector2(42.25001, 253.75)
