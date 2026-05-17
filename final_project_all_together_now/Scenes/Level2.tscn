@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dv1i5nh404ctl" path="res://Art/cave _background.jpeg" id="1_ms0wi"]
 [ext_resource type="Texture2D" uid="uid://b74ycvt0jvvao" path="res://Art/platform_2.jpeg" id="4_n3cqh"]
 [ext_resource type="Texture2D" uid="uid://ciphk8m1teicj" path="res://Art/Stone Wall.png" id="5_jriq2"]
-[ext_resource type="Script" path="res://Scenes/door_placeholder.gd" id="6_jriq2"]
+[ext_resource type="Script" uid="uid://bbooh7u8gk2rd" path="res://Scenes/door_placeholder.gd" id="6_jriq2"]
 [ext_resource type="Texture2D" uid="uid://dhm7x2uroe6dk" path="res://Art/Cave.png" id="7_ehjmi"]
 [ext_resource type="Texture2D" uid="uid://bk8g6qyblxavf" path="res://Art/pixelated-lava-texture-in-glowing-8-bit-style-seamless-red-orange-game-background-with-hot-magma-look-vector.jpg" id="8_p4u3k"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="9_70df5"]
@@ -107,7 +107,7 @@ position = Vector2(3686, -2613)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("6_jriq2")
-next_scene = "uid://eue4x8h4icm6"
+next_scene = "uid://8p8f28sys0jh"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_placeholder" unique_id=1628550305]
 position = Vector2(-299.5, 63.5)
@@ -244,7 +244,7 @@ script = ExtResource("6_jriq2")
 next_scene = "uid://l83j2wdfh6ms"
 
 [node name="Sprite2D" type="Sprite2D" parent="Lava_2" unique_id=1338743006]
-position = Vector2(1181, 74.24999)
+position = Vector2(1136, 93.99999)
 scale = Vector2(1.7635416, 0.59017277)
 texture = ExtResource("8_p4u3k")
 
