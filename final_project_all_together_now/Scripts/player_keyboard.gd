@@ -78,34 +78,23 @@ func end_grapple() -> void:
 #Customization
 #------------------------------
 
-@onready var helmets = [
-	$RedHelmet,
-	$OrangeHelmet,
-	$YellowHelmet,
-	$GreenHelmet,
-	$BlueHelmet,
-	$PurpleHelmet
-]
-
-func _ready():
-	apply_customization()
+@onready var helmets = [$RedHelmet, $OrangeHelmet, $YellowHelmet, $GreenHelmet, $BlueHelmet, $PurpleHelmet]
 
 func apply_customization():
 	for h in helmets:
 		if h: 
 			h.visible = false
 
-	var selected_helmet_index: int = 0
-	var index = GlobalVariable.selected_helmet_index
+	var target_index = GlobalVariable.selected_helmet_index
+	print("PLAYER RECEIVED HELMET INDEX: ", target_index)
 	
-	if index >= 0 and index < helmets.size():
-		var chosen_helmet = helmets[index]
-		if chosen_helmet:
-			chosen_helmet.visible = true
+	if target_index >= 0 and target_index < helmets.size():
+		if helmets[target_index]:
+			helmets[target_index].visible = true
 	else:
-		helmets[0].visible = true
-
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	position = Vector2(0,0)
+		if helmets[0]:
+			helmets[0].visible = true
+			
+func _ready():
+	print("--- PLAYER HAS SPAWNED IN THE LEVEL ---")
+	apply_customization()

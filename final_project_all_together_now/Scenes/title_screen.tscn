@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dbucr0lyodtjj" path="res://Art/blue-arrow-png-28.png" id="4_twnyg"]
 [ext_resource type="Texture2D" uid="uid://mkxhjesh5274" path="res://Art/Sparkles.png" id="5_8mikk"]
 [ext_resource type="Texture2D" uid="uid://eug52b5gldkg" path="res://Art/Map.png" id="9_sqelc"]
-[ext_resource type="Script" uid="uid://de1mj8gyvt2hj" path="res://Scripts/gamestart.gd" id="9_w5sh6"]
 [ext_resource type="Texture2D" uid="uid://dfjy0eb00jdlo" path="res://Art/grapple_hook.png" id="10_w5sh6"]
 [ext_resource type="Texture2D" uid="uid://o3dqvy0oj64k" path="res://Art/Logo.png" id="12_w5sh6"]
 
@@ -51,6 +50,7 @@ corner_radius_bottom_left = 15
 
 [node name="TitleScreen" type="Node2D" unique_id=1942430554]
 script = ExtResource("1_4gxqj")
+game_scene_path = "uid://yg2pjxr0y1b0"
 
 [node name="LogCabin" type="Sprite2D" parent="." unique_id=1297847908]
 position = Vector2(750.24, 450.4875)
@@ -146,25 +146,25 @@ region_enabled = true
 region_rect = Rect2(65.5, -0.25, 34.5, 24.875)
 
 [node name="HelmetButton" type="Button" parent="." unique_id=1873335860]
-offset_left = 58.0
-offset_top = 262.0
-offset_right = 269.0
-offset_bottom = 371.0
+offset_left = 538.0
+offset_top = 269.0
+offset_right = 749.0
+offset_bottom = 378.0
 
 [node name="ForwardBlueArrow" type="Sprite2D" parent="HelmetButton" unique_id=393913547]
-position = Vector2(102, 53)
-rotation = 3.1415927
+position = Vector2(109, 55)
 scale = Vector2(0.396, 0.475)
 texture = ExtResource("4_twnyg")
 
 [node name="HelmetBack" type="Button" parent="." unique_id=114845922]
-offset_left = 533.0
-offset_top = 267.0
-offset_right = 743.0
-offset_bottom = 376.0
+offset_left = 265.0
+offset_top = 378.0
+offset_right = 475.0
+offset_bottom = 487.0
+rotation = 3.1415927
 
 [node name="ForwardBlueArrow" type="Sprite2D" parent="HelmetBack" unique_id=97557458]
-position = Vector2(109, 57)
+position = Vector2(106.000015, 56)
 scale = Vector2(0.396, 0.475)
 texture = ExtResource("4_twnyg")
 
@@ -182,8 +182,6 @@ offset_right = 1105.0
 offset_bottom = 844.0
 theme_override_font_sizes/font_size = 73
 text = "Start"
-script = ExtResource("9_w5sh6")
-scene_to_load = "uid://yg2pjxr0y1b0"
 
 [node name="Map" type="Sprite2D" parent="." unique_id=2059268804]
 position = Vector2(539.24994, 741)
@@ -239,3 +237,4 @@ region_rect = Rect2(29.5, 75.75, 45.5, 9.5)
 
 [connection signal="pressed" from="HelmetButton" to="." method="_on_helmet_button_pressed"]
 [connection signal="pressed" from="HelmetBack" to="." method="_on_helmet_back_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

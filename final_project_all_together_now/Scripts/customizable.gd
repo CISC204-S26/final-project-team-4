@@ -50,7 +50,10 @@ func _on_helmet_back_pressed():
 	sync_view_to_model() 
 	
 func _on_start_button_pressed():
-	GlobalVariable.selected_helmet_index = h_idx
+	var final_choice = h_idx
+	GlobalVariable.selected_helmet_index = final_choice
+	
+	print("SAVING HELMET INDEX TO GLOBAL: ", GlobalVariable.selected_helmet_index)
 	
 	if game_scene_path != "":
 		get_tree().change_scene_to_file(game_scene_path)
