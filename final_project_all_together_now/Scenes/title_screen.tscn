@@ -50,7 +50,7 @@ corner_radius_bottom_left = 15
 
 [node name="TitleScreen" type="Node2D" unique_id=1942430554]
 script = ExtResource("1_4gxqj")
-game_scene_path = "uid://yg2pjxr0y1b0"
+game_scene_path = "uid://db7syxyihyiy0"
 
 [node name="LogCabin" type="Sprite2D" parent="." unique_id=1297847908]
 position = Vector2(750.24, 450.4875)
