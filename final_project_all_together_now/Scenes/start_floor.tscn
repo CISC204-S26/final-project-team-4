@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="5_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkxihocn0ku03" path="res://Scenes/stone_wall.tscn" id="6_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="7_5kskf"]
-[ext_resource type="Script" uid="uid://bbooh7u8gk2rd" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
+[ext_resource type="Script" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eako0"]
 size = Vector2(1665, 69)

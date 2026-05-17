@@ -59,3 +59,8 @@ func _on_start_button_pressed():
 		get_tree().change_scene_to_file(game_scene_path)
 	else:
 		print("Error: You haven't assigned a scene to game_scene_path in the Inspector!")
+
+func _on_level_select_button_pressed():
+	GlobalVariable.selected_helmet_index = h_idx
+	
+	get_tree().change_scene_to_file("res://scenes/levelselect.tscn")

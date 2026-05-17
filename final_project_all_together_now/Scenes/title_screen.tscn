@@ -204,7 +204,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_sqelc")
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=582777955]
 layout_mode = 2
 
-[node name="LevelButton" type="Button" parent="." unique_id=1271804670]
+[node name="LevelSelectButton" type="Button" parent="." unique_id=1271804670]
 offset_left = 1143.0
 offset_top = 684.0
 offset_right = 1337.0
@@ -238,3 +238,4 @@ region_rect = Rect2(29.5, 75.75, 45.5, 9.5)
 [connection signal="pressed" from="HelmetButton" to="." method="_on_helmet_button_pressed"]
 [connection signal="pressed" from="HelmetBack" to="." method="_on_helmet_back_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="LevelSelectButton" to="." method="_on_level_select_button_pressed"]
