@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="5_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkxihocn0ku03" path="res://Scenes/stone_wall.tscn" id="6_5kskf"]
 [ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="7_5kskf"]
-[ext_resource type="Script" uid="uid://bbooh7u8gk2rd" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
+[ext_resource type="Script" path="res://Scenes/door_placeholder.gd" id="8_htqsl"]
 [ext_resource type="Texture2D" uid="uid://x4wmgoeumi51" path="res://Art/pngtree-a-black-hole-pixel-art-blue-asset-ui-pixelated-low-res-png-image_17358933.webp" id="8_kbsl7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eako0"]
@@ -101,7 +101,8 @@ scale = Vector2(5, 1)
 position = Vector2(538, 108)
 
 [node name="Area2D" type="Area2D" parent="enemy_grappler" unique_id=1120921600]
-collision_mask = 3
+collision_layer = 3
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_grappler/Area2D" unique_id=1803575967]
 position = Vector2(3, 3)
@@ -137,3 +138,5 @@ shape = SubResource("RectangleShape2D_svhfh")
 [node name="Mouse" parent="." unique_id=347734597 node_paths=PackedStringArray("player") instance=ExtResource("5_5kskf")]
 position = Vector2(5, 0)
 player = NodePath("../playerKeyboard")
+
+[connection signal="body_entered" from="enemy_grappler/Area2D" to="playerKeyboard" method="_on_area_2d_body_entered"]
