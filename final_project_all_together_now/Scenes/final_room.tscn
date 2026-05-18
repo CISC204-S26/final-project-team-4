@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/stone_pillar.tscn" id="2_5un6o"]
 [ext_resource type="Texture2D" uid="uid://b74ycvt0jvvao" path="res://Art/platform_2.jpeg" id="3_wq24h"]
 [ext_resource type="PackedScene" uid="uid://dvoeug3ul32lj" path="res://Scenes/test_enemy.tscn" id="4_daj1l"]
+[ext_resource type="Script" uid="uid://ddqf8kx27q8tf" path="res://Scenes/boss.gd" id="5_dmoq2"]
 [ext_resource type="PackedScene" uid="uid://b83wjesqf68vj" path="res://Scenes/mouse.tscn" id="6_jsg6b"]
 [ext_resource type="Texture2D" uid="uid://b34hmypprjlts" path="res://Art/LevelSelectLogo.png" id="7_1xycw"]
 [ext_resource type="PackedScene" uid="uid://ce5nuuhdx3pa7" path="res://Scenes/grappling_hook.tscn" id="8_1xycw"]
@@ -83,10 +84,12 @@ position = Vector2(-13.9999485, 13.000007)
 scale = Vector2(1.6510638, 0.5428572)
 texture = ExtResource("3_wq24h")
 
-[node name="TestEnemy" parent="Ground_1" unique_id=216584471 instance=ExtResource("4_daj1l")]
+[node name="Boss" parent="Ground_1" unique_id=216584471 instance=ExtResource("4_daj1l")]
 position = Vector2(28, -354)
+script = ExtResource("5_dmoq2")
+health = 1000
 
-[node name="Sprite2D2" type="Sprite2D" parent="Ground_1/TestEnemy" unique_id=379845995]
+[node name="Sprite2D2" type="Sprite2D" parent="Ground_1/Boss" unique_id=379845995]
 position = Vector2(-10.9999695, -36)
 scale = Vector2(9.179231, 9.987142)
 texture = ExtResource("7_1xycw")
