@@ -37,9 +37,9 @@ func _physics_process(delta: float) -> void:
 		var cable_distance = cable_vector.length();
 		
 		#pull or push player toward grapple point
-		if Input.is_action_pressed("interact"):
+		if Input.is_action_pressed("hook_up"):
 			grapple_cable_length = move_toward(grapple_cable_length, grapple_min_cable_length, grapple_pull_speed * delta);
-		elif Input.is_action_pressed("interact_2"):
+		elif Input.is_action_pressed("fall_fast"):
 			grapple_cable_length += grapple_pull_speed * delta;
 		
 		if (cable_distance > 0):
