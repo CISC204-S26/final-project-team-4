@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cyxqundcwhy21" path="res://Scenes/player_keyboard.tscn" id="1_0plju"]
 [ext_resource type="Texture2D" uid="uid://dv1i5nh404ctl" path="res://Art/cave _background.jpeg" id="1_ms0wi"]
 [ext_resource type="PackedScene" uid="uid://cknsghiynrcd" path="res://Scenes/shielded_enemy.tscn" id="2_au75x"]
-[ext_resource type="PackedScene" uid="uid://bkwvqsx3jclkt" path="res://Scenes/enemy_grappler.tscn" id="3_62f1r"]
 [ext_resource type="PackedScene" uid="uid://ce5nuuhdx3pa7" path="res://Scenes/grappling_hook.tscn" id="3_70df5"]
 [ext_resource type="Texture2D" uid="uid://b74ycvt0jvvao" path="res://Art/platform_2.jpeg" id="4_n3cqh"]
 [ext_resource type="Texture2D" uid="uid://ciphk8m1teicj" path="res://Art/Stone Wall.png" id="5_jriq2"]
@@ -58,8 +57,6 @@ position = Vector2(3869, -497)
 [node name="ShieldedEnemy3" parent="." unique_id=128968973 instance=ExtResource("2_au75x")]
 position = Vector2(769, -1409)
 
-[node name="enemy_grappler" parent="." unique_id=862453220 instance=ExtResource("3_62f1r")]
-
 [node name="playerKeyboard" parent="." unique_id=1364868426 groups=["player"] instance=ExtResource("1_0plju")]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="playerKeyboard" unique_id=149624542]
@@ -75,9 +72,6 @@ monitorable = false
 position = Vector2(5.9999695, 10)
 scale = Vector2(8.455564, 10.502764)
 shape = SubResource("CircleShape2D_n3cqh")
-
-[node name="Camera2D" type="Camera2D" parent="playerKeyboard" unique_id=175429053]
-position = Vector2(6, 10)
 
 [node name="GrapplingHook" parent="playerKeyboard" unique_id=126776428 node_paths=PackedStringArray("player") instance=ExtResource("3_70df5")]
 player = NodePath("..")
