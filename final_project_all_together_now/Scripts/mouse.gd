@@ -90,7 +90,7 @@ func ability1():
 			shot.direction = Vector2(0, 0)
 			shot.power = 25
 			get_tree().root.add_child(shot)
-			ability11_cooldown = 50
+			ability11_cooldown = 12
 	if current_mode == 2:
 		if ability12_cooldown < 1:
 			var shot1 = bullet.instantiate()
@@ -129,7 +129,7 @@ func ability1():
 			shot9.direction = Vector2(1, 0)
 			shot9.power = 10
 			get_tree().root.add_child(shot9)
-			ability12_cooldown = 150
+			ability12_cooldown = 37
 	if current_mode == 3:
 		can_shoot_laser = true;
 	else:
